@@ -1,0 +1,214 @@
+[11-Oct-2021 11:42:06 UTC] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, bool given in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php:147
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(147): fclose(false)
+#1 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(207): Cartflows_Log_Handler_File->open('cartflows')
+#2 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(99): Cartflows_Log_Handler_File->add('2021-10-11T11:4...', 'cartflows')
+#3 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-wc-logger.php(144): Cartflows_Log_Handler_File->handle(1633952526, 'info', 'Start-Cartflows...', Array)
+#4 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\class-cartflows-logger.php(80): Cartflows_WC_Logger->log('info', 'Start-Cartflows...', Array)
+#5 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\class-cartflows-frontend.php(61): Cartflows_Logger->log('Start-Cartflows...')
+#6 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): Cartflows_Frontend->redirect_to_thankyou_page('http://localhos...', Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#7 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(189): WP_Hook->apply_filters('http://localhos...', Array)
+#8 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-order.php(1608): apply_filters('woocommerce_get...', 'http://localhos...', Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#9 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-payment-gateway.php(226): WC_Order->get_checkout_order_received_url()
+#10 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\gateways\cod\class-wc-gateway-cod.php(337): WC_Payment_Gateway->get_return_url(Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#11 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(980): WC_Gateway_COD->process_payment(4280)
+#12 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1195): WC_Checkout->process_order_payment(4280, 'cod')
+#13 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(466): WC_Checkout->process_checkout()
+#14 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): WC_AJAX::checkout('')
+#15 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#16 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#17 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(90): do_action('wc_ajax_checkou...')
+#18 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): WC_AJAX::do_wc_ajax('')
+#19 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(false, Array)
+#20 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#21 C:\xampp\htdocs\wordpress\wp-includes\template-loader.php(13): do_action('template_redire...')
+#22 C:\xampp\htdocs\wordpress\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#23 C:\xampp\htdocs\wordpress\index.php(17): require('C:\\xampp\\htdocs...')
+#24 {main}
+  thrown in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php on line 147
+[11-Oct-2021 11:58:37 UTC] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, bool given in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php:147
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(147): fclose(false)
+#1 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(207): Cartflows_Log_Handler_File->open('cartflows')
+#2 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(99): Cartflows_Log_Handler_File->add('2021-10-11T11:5...', 'cartflows')
+#3 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-wc-logger.php(144): Cartflows_Log_Handler_File->handle(1633953517, 'info', 'Start-Cartflows...', Array)
+#4 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\class-cartflows-logger.php(80): Cartflows_WC_Logger->log('info', 'Start-Cartflows...', Array)
+#5 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\class-cartflows-frontend.php(61): Cartflows_Logger->log('Start-Cartflows...')
+#6 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): Cartflows_Frontend->redirect_to_thankyou_page('http://localhos...', Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#7 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(189): WP_Hook->apply_filters('http://localhos...', Array)
+#8 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-order.php(1608): apply_filters('woocommerce_get...', 'http://localhos...', Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#9 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-payment-gateway.php(226): WC_Order->get_checkout_order_received_url()
+#10 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\gateways\cod\class-wc-gateway-cod.php(337): WC_Payment_Gateway->get_return_url(Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#11 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(980): WC_Gateway_COD->process_payment(4281)
+#12 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1195): WC_Checkout->process_order_payment(4281, 'cod')
+#13 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(466): WC_Checkout->process_checkout()
+#14 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): WC_AJAX::checkout('')
+#15 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#16 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#17 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(90): do_action('wc_ajax_checkou...')
+#18 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): WC_AJAX::do_wc_ajax('')
+#19 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(false, Array)
+#20 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#21 C:\xampp\htdocs\wordpress\wp-includes\template-loader.php(13): do_action('template_redire...')
+#22 C:\xampp\htdocs\wordpress\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#23 C:\xampp\htdocs\wordpress\index.php(17): require('C:\\xampp\\htdocs...')
+#24 {main}
+  thrown in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php on line 147
+[11-Oct-2021 12:01:19 UTC] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, bool given in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php:147
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(147): fclose(false)
+#1 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(207): Cartflows_Log_Handler_File->open('cartflows')
+#2 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(99): Cartflows_Log_Handler_File->add('2021-10-11T12:0...', 'cartflows')
+#3 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-wc-logger.php(144): Cartflows_Log_Handler_File->handle(1633953679, 'info', 'Start-Cartflows...', Array)
+#4 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\class-cartflows-logger.php(80): Cartflows_WC_Logger->log('info', 'Start-Cartflows...', Array)
+#5 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\class-cartflows-frontend.php(61): Cartflows_Logger->log('Start-Cartflows...')
+#6 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): Cartflows_Frontend->redirect_to_thankyou_page('http://localhos...', Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#7 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(189): WP_Hook->apply_filters('http://localhos...', Array)
+#8 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-order.php(1608): apply_filters('woocommerce_get...', 'http://localhos...', Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#9 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-payment-gateway.php(226): WC_Order->get_checkout_order_received_url()
+#10 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\gateways\cod\class-wc-gateway-cod.php(337): WC_Payment_Gateway->get_return_url(Object(Automattic\WooCommerce\Admin\Overrides\Order))
+#11 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(980): WC_Gateway_COD->process_payment(4282)
+#12 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1195): WC_Checkout->process_order_payment(4282, 'cod')
+#13 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(466): WC_Checkout->process_checkout()
+#14 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): WC_AJAX::checkout('')
+#15 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#16 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#17 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(90): do_action('wc_ajax_checkou...')
+#18 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): WC_AJAX::do_wc_ajax('')
+#19 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(false, Array)
+#20 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#21 C:\xampp\htdocs\wordpress\wp-includes\template-loader.php(13): do_action('template_redire...')
+#22 C:\xampp\htdocs\wordpress\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#23 C:\xampp\htdocs\wordpress\index.php(17): require('C:\\xampp\\htdocs...')
+#24 {main}
+  thrown in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php on line 147
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[11-Oct-2021 12:12:35 UTC] PHP Warning:  Array to string conversion in C:\xampp\htdocs\wordpress\wp-content\plugins\health-check\includes\class-health-check-site-status.php on line 2014
+[12-Oct-2021 08:53:03 UTC] WordPress database error Deadlock found when trying to get lock; try restarting transaction for query DELETE FROM `wp_options` WHERE `option_name` = '_transient_wc_onboarding_product_data' made by require_once('wp-admin/admin-footer.php'), do_action('admin_print_footer_scripts'), WP_Hook->do_action, WP_Hook->apply_filters, Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry->enqueue_asset_data, Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry->initialize_core_data, apply_filters('woocommerce_shared_settings'), WP_Hook->apply_filters, Automattic\WooCommerce\Admin\Loader::add_component_settings, array_reduce, rest_preload_api_request, rest_do_request, rest_get_server, do_action('rest_api_init'), WP_Hook->do_action, WP_Hook->apply_filters, Automattic\WooCommerce\Admin\API\Init->rest_api_init, Automattic\WooCommerce\Admin\API\OnboardingProfile->register_routes, Automattic\WooCommerce\Admin\API\OnboardingProfile->get_collection_params, Automattic\WooCommerce\Admin\API\OnboardingProfile::get_profile_properties, Automattic\WooCommerce\Admin\Features\Onboarding::get_allowed_product_types, Automattic\WooCommerce\Admin\Features\Onboarding::append_product_data, get_transient, delete_option
+[12-Oct-2021 08:54:01 UTC] PHP Fatal error:  Uncaught TypeError: array_column(): Argument #1 ($array) must be of type array, string given in C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\Transformers\ArrayColumn.php:27
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\Transformers\ArrayColumn.php(27): array_column('', 'slug')
+#1 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\TransformerService.php(59): Automattic\WooCommerce\Admin\RemoteInboxNotifications\Transformers\ArrayColumn->transform('', Object(stdClass), '')
+#2 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\OptionRuleProcessor.php(45): Automattic\WooCommerce\Admin\RemoteInboxNotifications\TransformerService::apply('', Array, '')
+#3 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\RuleEvaluator.php(47): Automattic\WooCommerce\Admin\RemoteInboxNotifications\OptionRuleProcessor->process(Object(stdClass), NULL)
+#4 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Features\RemoteFreeExtensions\EvaluateExtension.php(26): Automattic\WooCommerce\Admin\RemoteInboxNotifications\RuleEvaluator->evaluate(Array)
+#5 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Features\RemoteFreeExtensions\Init.php(41): Automattic\WooCommerce\Admin\Features\RemoteFreeExtensions\EvaluateExtension::evaluate(Object(stdClass))
+#6 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\API\OnboardingFreeExtensions.php(75): Automattic\WooCommerce\Admin\Features\RemoteFreeExtensions\Init::get_extensions()
+#7 C:\xampp\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(1140): Automattic\WooCommerce\Admin\API\OnboardingFreeExtensions->get_available_extensions(Object(WP_REST_Request))
+#8 C:\xampp\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(987): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wc-admin/onboa...', Array, NULL)
+#9 C:\xampp\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#10 C:\xampp\htdocs\wordpress\wp-includes\rest-api.php(370): WP_REST_Server->serve_request('/wc-admin/onboa...')
+#11 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): rest_api_loaded(Object(WP))
+#12 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#13 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(518): WP_Hook->do_action(Array)
+#14 C:\xampp\htdocs\wordpress\wp-includes\class-wp.php(388): do_action_ref_array('parse_request', Array)
+#15 C:\xampp\htdocs\wordpress\wp-includes\class-wp.php(750): WP->parse_request('')
+#16 C:\xampp\htdocs\wordpress\wp-includes\functions.php(1291): WP->main('')
+#17 C:\xampp\htdocs\wordpress\wp-blog-header.php(16): wp()
+#18 C:\xampp\htdocs\wordpress\index.php(17): require('C:\\xampp\\htdocs...')
+#19 {main}
+  thrown in C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\Transformers\ArrayColumn.php on line 27
+[12-Oct-2021 13:04:28 UTC] PHP Fatal error:  Uncaught TypeError: array_column(): Argument #1 ($array) must be of type array, string given in C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\Transformers\ArrayColumn.php:27
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\Transformers\ArrayColumn.php(27): array_column('', 'slug')
+#1 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\TransformerService.php(59): Automattic\WooCommerce\Admin\RemoteInboxNotifications\Transformers\ArrayColumn->transform('', Object(stdClass), '')
+#2 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\OptionRuleProcessor.php(45): Automattic\WooCommerce\Admin\RemoteInboxNotifications\TransformerService::apply('', Array, '')
+#3 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\RuleEvaluator.php(47): Automattic\WooCommerce\Admin\RemoteInboxNotifications\OptionRuleProcessor->process(Object(stdClass), NULL)
+#4 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Features\RemoteFreeExtensions\EvaluateExtension.php(26): Automattic\WooCommerce\Admin\RemoteInboxNotifications\RuleEvaluator->evaluate(Array)
+#5 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Features\RemoteFreeExtensions\Init.php(41): Automattic\WooCommerce\Admin\Features\RemoteFreeExtensions\EvaluateExtension::evaluate(Object(stdClass))
+#6 C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\API\OnboardingFreeExtensions.php(75): Automattic\WooCommerce\Admin\Features\RemoteFreeExtensions\Init::get_extensions()
+#7 C:\xampp\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(1140): Automattic\WooCommerce\Admin\API\OnboardingFreeExtensions->get_available_extensions(Object(WP_REST_Request))
+#8 C:\xampp\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(987): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wc-admin/onboa...', Array, NULL)
+#9 C:\xampp\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#10 C:\xampp\htdocs\wordpress\wp-includes\rest-api.php(370): WP_REST_Server->serve_request('/wc-admin/onboa...')
+#11 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): rest_api_loaded(Object(WP))
+#12 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#13 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(518): WP_Hook->do_action(Array)
+#14 C:\xampp\htdocs\wordpress\wp-includes\class-wp.php(388): do_action_ref_array('parse_request', Array)
+#15 C:\xampp\htdocs\wordpress\wp-includes\class-wp.php(750): WP->parse_request('')
+#16 C:\xampp\htdocs\wordpress\wp-includes\functions.php(1291): WP->main('')
+#17 C:\xampp\htdocs\wordpress\wp-blog-header.php(16): wp()
+#18 C:\xampp\htdocs\wordpress\index.php(17): require('C:\\xampp\\htdocs...')
+#19 {main}
+  thrown in C:\xampp\htdocs\wordpress\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\RemoteInboxNotifications\Transformers\ArrayColumn.php on line 27
+[13-Oct-2021 10:25:57 UTC] Sync process for Gutenberg Blocks has started.
+[13-Oct-2021 10:25:57 UTC] CATEGORY:Importing categories..
+[13-Oct-2021 10:25:58 UTC] CATEGORY:Storing in option ast-block-templates-categories
+[13-Oct-2021 10:25:58 UTC] CATEGORY:Completed category import.
+[13-Oct-2021 10:25:58 UTC] BLOCK: Getting Total Blocks
+[13-Oct-2021 10:25:58 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/get-blocks-count/?page_builder=gutenberg&wireframe=yes
+[13-Oct-2021 10:25:59 UTC] BLOCK: Requests count 4
+[13-Oct-2021 10:25:59 UTC] BLOCK: Importing request 1 ..
+[13-Oct-2021 10:25:59 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=1&wireframe=yes
+[13-Oct-2021 10:25:59 UTC] BLOCK: Storing in option ast-block-templates-blocks-1
+[13-Oct-2021 10:25:59 UTC] BLOCK: Completed request 1
+[13-Oct-2021 10:25:59 UTC] BLOCK: Importing request 2 ..
+[13-Oct-2021 10:25:59 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=2&wireframe=yes
+[13-Oct-2021 10:25:59 UTC] BLOCK: Storing in option ast-block-templates-blocks-2
+[13-Oct-2021 10:25:59 UTC] BLOCK: Completed request 2
+[13-Oct-2021 10:25:59 UTC] BLOCK: Importing request 3 ..
+[13-Oct-2021 10:25:59 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=3&wireframe=yes
+[13-Oct-2021 10:25:59 UTC] BLOCK: Storing in option ast-block-templates-blocks-3
+[13-Oct-2021 10:25:59 UTC] BLOCK: Completed request 3
+[13-Oct-2021 10:25:59 UTC] BLOCK: Importing request 4 ..
+[13-Oct-2021 10:25:59 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=4&wireframe=yes
+[13-Oct-2021 10:26:00 UTC] BLOCK: Storing in option ast-block-templates-blocks-4
+[13-Oct-2021 10:26:00 UTC] BLOCK: Completed request 4
+[13-Oct-2021 10:26:00 UTC] SITE: Getting Total Sites
+[13-Oct-2021 10:26:00 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/get-total-pages/?page_builder=gutenberg
+[13-Oct-2021 10:26:00 UTC] SITE: Request count 1
+[13-Oct-2021 10:26:00 UTC] SITE: Importing request 1 ..
+[13-Oct-2021 10:26:00 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=1&page-builder=gutenberg
+[13-Oct-2021 10:26:00 UTC] SITE: Storing in option ast-block-templates-sites-1
+[13-Oct-2021 10:26:01 UTC] SITE: Completed request 1
+[13-Oct-2021 10:26:01 UTC] Sync process for Gutenberg Blocks is done.
+[13-Oct-2021 10:45:48 UTC] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, bool given in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php:147
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(147): fclose(false)
+#1 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(207): Cartflows_Log_Handler_File->open('cartflows-impor...')
+#2 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(99): Cartflows_Log_Handler_File->add('2021-10-13T10:4...', 'cartflows-impor...')
+#3 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-wc-logger.php(144): Cartflows_Log_Handler_File->handle(1634121948, 'info', '(\xE2\x9C\x93) Updated f...', Array)
+#4 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\class-cartflows-logger.php(99): Cartflows_WC_Logger->log('info', '(\xE2\x9C\x93) Updated f...', Array)
+#5 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\importer\class-cartflows-importer.php(406): Cartflows_Logger->import_log('(\xE2\x9C\x93) Updated f...')
+#6 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\importer\class-cartflows-importer.php(257): CartFlows_Importer->set_step_to_flow(4295, 4296, 'Organic Store C...', 'checkout')
+#7 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\importer\class-cartflows-importer.php(147): CartFlows_Importer->import_single_flow_from_json(Array)
+#8 C:\xampp\htdocs\wordpress\wp-content\plugins\astra-sites\inc\classes\class-astra-sites-importer.php(268): CartFlows_Importer->import_from_json_data(Array)
+#9 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): Astra_Sites_Importer->import_cartflows('https://website...')
+#10 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#11 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#12 C:\xampp\htdocs\wordpress\wp-admin\admin-ajax.php(187): do_action('wp_ajax_astra-s...')
+#13 {main}
+  thrown in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php on line 147
+[13-Oct-2021 10:46:36 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wordpress\wp-includes\wp-db.php on line 1653
+[13-Oct-2021 10:46:36 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wordpress\wp-includes\wp-db.php on line 1653
+[13-Oct-2021 10:53:52 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wordpress\wp-includes\wp-db.php on line 1653
+[13-Oct-2021 10:53:55 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wordpress\wp-includes\wp-db.php on line 1653
+[13-Oct-2021 10:57:29 UTC] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, bool given in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php:147
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(147): fclose(false)
+#1 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(207): Cartflows_Log_Handler_File->open('cartflows-impor...')
+#2 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php(99): Cartflows_Log_Handler_File->add('2021-10-13T10:5...', 'cartflows-impor...')
+#3 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-wc-logger.php(144): Cartflows_Log_Handler_File->handle(1634122649, 'info', '(\xE2\x9C\x93) Updated f...', Array)
+#4 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\class-cartflows-logger.php(99): Cartflows_WC_Logger->log('info', '(\xE2\x9C\x93) Updated f...', Array)
+#5 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\importer\class-cartflows-importer.php(406): Cartflows_Logger->import_log('(\xE2\x9C\x93) Updated f...')
+#6 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\importer\class-cartflows-importer.php(257): CartFlows_Importer->set_step_to_flow(4297, 4298, 'Organic Store C...', 'checkout')
+#7 C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\importer\class-cartflows-importer.php(147): CartFlows_Importer->import_single_flow_from_json(Array)
+#8 C:\xampp\htdocs\wordpress\wp-content\plugins\astra-sites\inc\classes\class-astra-sites-importer.php(268): CartFlows_Importer->import_from_json_data(Array)
+#9 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(303): Astra_Sites_Importer->import_cartflows('https://website...')
+#10 C:\xampp\htdocs\wordpress\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#11 C:\xampp\htdocs\wordpress\wp-includes\plugin.php(470): WP_Hook->do_action(Array)
+#12 C:\xampp\htdocs\wordpress\wp-admin\admin-ajax.php(187): do_action('wp_ajax_astra-s...')
+#13 {main}
+  thrown in C:\xampp\htdocs\wordpress\wp-content\plugins\cartflows\classes\logger\class-cartflows-log-handler-file.php on line 147
