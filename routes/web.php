@@ -5,6 +5,7 @@ use App\Http\Controllers\dtrlogsController;
 use App\Http\Controllers\employeesController;
 use App\Http\Controllers\payrollController;
 use App\Http\Controllers\requestsController;
+use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::get('/login', function () {
     return view('login');
 });
 
@@ -48,6 +50,9 @@ Route::get('/payroll', function () {
 
 //Maangas
 
+
+
+
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/dtrlogs', [dtrlogsController::class, 'index'])->name('dtrlogs');
@@ -59,5 +64,4 @@ Route::get('/requests', [requestsController::class, 'index'])->name('requests');
 //Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/payroll', [payrollController::class, 'index'])->name('payroll');
-
 
