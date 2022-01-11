@@ -1,9 +1,38 @@
-@extends('navbar')
+@extends('app')
 
 @section('title', 'employees')
 
 
 @section('content')
+
+<!-- Navbar -->
+<nav class="text-black-200 bg-purple-500 body-font shadow w-full">
+  <div class="container flex items-center p-6 mx-auto text-gray-800 capitalize dark:text-gray-300">
+      
+      <a
+      class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center lg:items-center lg:justify-center mb-4 md:mb-0">
+      <img src="{{ asset('images/logo_caps.png') }}" style="height: 60px; margin-top: 1px; margin-bottom: 1px;"
+          alt="logo">
+      </a>
+
+      <a href="{{ route('dashboard') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Dashboard</a>
+
+      <a href="{{ route('dtrlogs') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">DTR/Logs</a>
+
+      <a href="{{ route('employees') }}" class="text-gray-800 hover:text-gray-800 dark:text-gray-200 border-b-2 border-purple-800 mx-1.5 sm:mx-6">Employees</a>
+
+      <a href="{{ route('requests') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Requests</a>
+
+      <a href="{{ route('messages') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Messages</a>
+
+      <a href="{{ route('payroll') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Payroll</a>
+
+      <a class="lg:ml-20 border-transparent bg-purple-500 hover:text-purple-300 hover:bg-purple-800 text-gray-800 ml-4 py-2 px-3 rounded-lg">
+          Hello, User
+      </a>
+
+  </div>
+</nav>
 
 <!--Employee List Table -->
 <style>
@@ -39,6 +68,7 @@
     <th class="px-4 py-3">Department</th>
     <th class="px-4 py-3">Status</th>
     <th class="px-4 py-3">Date Updated</th>
+    <th class="px-4 py-3">Actions</th>
   </tr>
   
   <tr class="bg-gray-100 border-b border-purple-400">
@@ -47,6 +77,13 @@
     <td class="px-4 py-3">Logistics</td>
     <td class="px-4 py-3">Active</td>
     <td class="px-4 py-3">August 28, 2021</td>
+    <td class="px-4 py-3">
+      <button type="button" class="mr-2 bg-purple-600 text-white p-2 rounded  leading-none flex items-center">
+        <a href="#" class="hover:text-gray-800">
+      	  View
+        </a>
+      </button>
+    </td>
   </tr> 
 <!-- each row -->
 
@@ -56,6 +93,13 @@
   <td class="px-4 py-3">Logistics</td>
   <td class="px-4 py-3">Terminated</td>
   <td class="px-4 py-3">August 25, 2021</td>
+  <td class="px-4 py-3">
+    <button type="button" class="mr-2 bg-purple-600 text-white p-2 rounded  leading-none flex items-center">
+      <a href="#" class="hover:text-gray-800">
+        View
+      </a>
+    </button>
+  </td>
 </tr> 
 <!-- each row -->
 
@@ -65,6 +109,13 @@
   <td class="px-4 py-3">Marketing</td>
   <td class="px-4 py-3">Pending</td>
   <td class="px-4 py-3">August 28, 2021</td>
+  <td class="px-4 py-3">
+    <button type="button" class="mr-2 bg-purple-600 text-white p-2 rounded  leading-none flex items-center">
+      <a href="#" class="hover:text-gray-800">
+        View
+      </a>
+    </button>
+  </td>
 </tr> 
 <!-- each row -->
 

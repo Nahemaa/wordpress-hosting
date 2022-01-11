@@ -28,25 +28,21 @@
                     <img src="{{ asset('images/logo_caps.png') }}" alt="" class="w-80 h-30 fill-current text-gray-500">
             </div>
             <div class="m-7">
-                <form method="post">
-                    {{ csrf_field() }}
-                    <div class="form-group-login">
+                <form action="">
+                    <div class="mb-6">
                         <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Employee ID</label>
                         <input type="email" name="email" id="email" placeholder="Your Employee ID" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
                     </div>
-
-                    <div class="form-group-login">
+                    <div class="mb-6">
                         <div class="flex justify-between mb-2">
                             <label for="password" class="text-sm text-gray-600 dark:text-gray-400">Password</label>
                             <a href="#!" class="text-sm text-gray-400 focus:outline-none focus:text-indigo-500 hover:text-indigo-500 dark:hover:text-indigo-300">Forgot password?</a>
                         </div>
                         <input type="password" name="password" id="password" placeholder="Your Password" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
                     </div>
-
-                    <div class="form-group-login">
-                     <input type="submit" name="login" button type="button" value="Login" class="w-full px-3 py-4 text-white bg-purple-500 rounded-md focus:bg-purple-600 focus:outline-none text-center">Sign in</button>
+                    <div class="mb-6">
+                        <button type="button" class="w-full px-3 py-4 text-white bg-purple-500 rounded-md focus:bg-purple-600 focus:outline-none text-center">Sign in</button>
                     </div>
-
                 </form>
             </div>
         </div>
