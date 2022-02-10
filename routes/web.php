@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\accountinfoController;
 use App\Http\Controllers\accountinformationController;
 use App\Http\Controllers\dashboardController;
@@ -10,23 +11,19 @@ use App\Http\Controllers\payrollController;
 use App\Http\Controllers\requestsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usersController;
+use App\Http\Controllers\loginController;
+use Illuminate\Support\Facades\Auth;
+Auth::routes();
 
 
-
-
+/*
 Route::get('/login', function () {
     return view('login');
 });
 
-
-Route::get('/registration', function () {
-    return view('registration');
-});
-
-
-
-
 Route::get('/login', [usersController::class,'login']);
+
+
 
 Route::get('/registration', function () {
     return view('registration');
@@ -35,7 +32,31 @@ Route::get('/registration', function () {
 Route::get('/registration', [usersController::class,'registration']);
 
 
-    
+*/
+
+Route::get('dashboard', [loginController::class, 'SignedIn'])->name('dashboard')->middleware('UserCheck');
+
+Route::get('/dtrlogs', [dtrlogsController::class, 'index'])->name('dtrlogs');
+
+Route::get('/employees', [employeesController::class, 'index'])->name('employees');
+
+Route::get('/requests', [requestsController::class, 'index'])->name('requests');
+
+Route::get('/messages', [messagesController::class, 'index'])->name('messages');
+
+Route::get('/payroll', [payrollController::class, 'index'])->name('payroll');
+
+Route::get('/login', [loginController::class, 'login'])->name('login');
+
+Route::post('/login-user', [loginController::class, 'loginchecker'])->name('login-checker');
+
+Route::get('/logout', [loginController::class, 'logout'])->name('logout');
+
+Route::get('/registration', [loginController::class, 'registration']);
+
+Route::post('/register-user', [loginController::class, 'checker'])->name('register-user');
+
+Route::post('/register-user', [loginController::class, 'RegisterUser'])->name('register-user');
 
 
 

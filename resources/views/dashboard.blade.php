@@ -5,6 +5,7 @@
 
 @section('content')
 
+
 <!-- Navbar -->
 <nav class="text-black-200 bg-purple-500 body-font shadow w-full">
     <div class="container flex items-center p-6 mx-auto text-gray-800 capitalize dark:text-gray-300">
@@ -27,9 +28,11 @@
 
         <a href="{{ route('payroll') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Payroll</a>
 
-        <a class="lg:ml-20 lg:m border-transparent bg-purple-500 hover:text-purple-300 hover:bg-purple-800 text-gray-800 ml-4 py-2 px-3 rounded-lg">
-            Hello, User
+        <a>
+            Hello, {{$data->first_name}}!
         </a>
+
+        <a class="lg:ml-20 lg:m border-transparent bg-purple-500 hover:text-purple-300 hover:bg-purple-800 text-gray-800 ml-4 py-2 px-3 rounded-lg" href="{{ route('logout') }}">Log Out</a>
 
     </div>
 </nav>

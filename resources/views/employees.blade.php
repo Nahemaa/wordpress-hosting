@@ -34,90 +34,227 @@
   </div>
 </nav>
 
-<!--Employee List Table -->
-<style>
-    body{background:white!important;}
-</style>
-<p class="text-xl text-center font-bold m-5">Employee List</p>
 
-<!--Search Bar -->
-<div class="col-md-10 offset-md-9">
-  <button class="w-full sm:w-auto px-24 py-2   mb-4  text-sm my-3 font-medium shadow focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200 rounded-md block  border-b border-purple-300 bg-purple-200 hover:bg-purple-300 text-purple-900">Add Employee</button>
- 
-    <div class="relative md:w-1/5 ">
-      <input type="search"
-            class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium"
-            placeholder="Search...">
-
-        <div class="absolute top-0 left-0 inline-flex items-center p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" viewBox="0 0 24 24"
-                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                stroke-linejoin="round">
-                <rect x="0" y="0" width="24" height="24" stroke="none"></rect>
-                <circle cx="10" cy="10" r="7" />
-                <line x1="21" y1="21" x2="15" y2="15" />
-            </svg>
-        </div>
-    </div>
-</div>
-
-<table class="rounded-t-lg m-5 w-5/6 mx-auto bg-purple-300 text-gray-800">
-  <tr class="text-left border-b-2 border-purple-400">
-    <th class="px-4 py-3">Employee ID</th>
-    <th class="px-4 py-3">Name</th>
-    <th class="px-4 py-3">Department</th>
-    <th class="px-4 py-3">Status</th>
-    <th class="px-4 py-3">Date Updated</th>
-    <th class="px-4 py-3">Actions</th>
-  </tr>
+@if (session()->has('success'))
+<!-- Success Alert -->
+<div class="text-green-800 px-1 py-1 border-green-300 border-b-2 rounded relative bg-green-200 ml-2 mr-2 mt-2">
+	<span class="text-xl inline-block mr-5 align-middle">
+	</span>
+	<span class="inline-block align-top mr-5 ml-1">
+	  <b class="capitalize">Success!</b> 
+	  <br>Action completed successfully.
+	</span>
+	<button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-0 mr-3 outline-none focus:outline-none" onclick="closeAlert(event)">
+	  <span>×</span>
   
-  <tr class="bg-gray-100 border-b border-purple-400">
-    <td class="px-4 py-3">LG212387</td>
-    <td class="px-4 py-3">John Luelle Gabales</td>
-    <td class="px-4 py-3">Logistics</td>
-    <td class="px-4 py-3">Active</td>
-    <td class="px-4 py-3">August 28, 2021</td>
-    <td class="px-4 py-3">
-      <button type="button" class="mr-2 bg-purple-600 text-white p-2 rounded  leading-none flex items-center">
-        <a href="#" class="hover:text-gray-800">
-      	  View
-        </a>
-      </button>
-    </td>
-  </tr> 
-<!-- each row -->
+	</button>
+  </div>
+  <script>
+	function closeAlert(event){
+	  let element = event.target;
+	  while(element.nodeName !== "BUTTON"){
+		element = element.parentNode;
+	  }
+	  element.parentNode.parentNode.removeChild(element.parentNode);
+	}
+  </script>
+@endif
 
-<tr class="bg-gray-100 border-b border-purple-400">
-  <td class="px-4 py-3">LG11224</td>
-  <td class="px-4 py-3">Gerard Way</td>
-  <td class="px-4 py-3">Logistics</td>
-  <td class="px-4 py-3">Terminated</td>
-  <td class="px-4 py-3">August 25, 2021</td>
-  <td class="px-4 py-3">
-    <button type="button" class="mr-2 bg-purple-600 text-white p-2 rounded  leading-none flex items-center">
-      <a href="#" class="hover:text-gray-800">
-        View
-      </a>
-    </button>
-  </td>
-</tr> 
-<!-- each row -->
 
-<tr class="bg-gray-100 border-b border-purple-400">
-  <td class="px-4 py-3">MK11224</td>
-  <td class="px-4 py-3">Bruce Wayne</td>
-  <td class="px-4 py-3">Marketing</td>
-  <td class="px-4 py-3">Pending</td>
-  <td class="px-4 py-3">August 28, 2021</td>
-  <td class="px-4 py-3">
-    <button type="button" class="mr-2 bg-purple-600 text-white p-2 rounded  leading-none flex items-center">
-      <a href="#" class="hover:text-gray-800">
-        View
-      </a>
-    </button>
-  </td>
-</tr> 
-<!-- each row -->
+
+<!-- Employees -->
+<div class="bg-white p-8 rounded-md w-full">
+	<div class=" flex items-center justify-between pb-6">
+		<div>
+			<h1 class="text-gray-600 font-semibold">Employees</h1>
+			<span class="text-xs">All employees list</span>
+		</div>
+		<div class="flex items-center justify-between">
+			<div class="flex bg-gray-50 items-center p-2 rounded-md">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+					fill="currentColor">
+					<path fill-rule="evenodd"
+						d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+						clip-rule="evenodd" />
+				</svg>
+				<input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id="" placeholder="Search...">
+          </div>
+				<div class="lg:ml-5 ml-10 space-x-2">
+					<button class="bg-purple-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">Search</button>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+				<div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+					<table class="min-w-full leading-normal">
+						<thead>
+							<tr>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Name
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Email
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Department
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Date Updated
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Status
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+													Dina Fritz
+												</p>
+											</div>
+										</div>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">dinafritz@hotmail.com</p>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  <!-- Dropdown -->
+                  <div class="relative inline-flex">
+                    <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
+                    <select class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
+                      <option>Department</option>
+                      <option>Logistics</option>
+                      <option>Sales</option>
+                      <option>Support</option>
+                      <option>Marketing</option>
+                    </select>
+                  </div>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">
+										January 23, 2022
+									</p>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<span
+                                        class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                        <span aria-hidden
+                                            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+									<span class="relative">Active</span>
+									</span>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+													Annie Leonheart
+												</p>
+											</div>
+										</div>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">femtitan@yahoo.com</p>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <!-- Dropdown -->
+                    <div class="relative inline-flex">
+                      <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
+                      <select class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
+                        <option>Department</option>
+                        <option>Logistics</option>
+                        <option>Sales</option>
+                        <option>Support</option>
+                        <option>Marketing</option>
+                      </select>
+                    </div>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">
+										January 25, 2022
+									</p>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<span
+                                        class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
+                                        <span aria-hidden
+                                            class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
+									<span class="relative">Suspended</span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="px-5 py-5 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+													Armin Arlert
+												</p>
+											</div>
+										</div>
+								</td>
+								<td class="px-5 py-5 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">arminarlert05@gmail.com</p>
+								</td>
+								<td class="px-5 py-5 bg-white text-sm">
+									 <!-- Dropdown -->
+                                      <div class="relative inline-flex">
+                                        <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
+                                        <select class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
+                                          <option>Department</option>
+                                          <option>Logistics</option>
+                                          <option>Sales</option>
+                                          <option>Support</option>
+                                          <option>Marketing</option>
+                                        </select>
+                                      </div>
+								</td>
+								<td class="px-5 py-5 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">February 01, 2022</p>
+								</td>
+								<td class="px-5 py-5 bg-white text-sm">
+									<span
+                                        class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
+                                        <span aria-hidden
+                                            class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
+									<span class="relative">Inactive</span>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div
+						class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+						<span class="text-xs xs:text-sm text-gray-900">
+                            Showing 1 to 3 of 30 Employees
+                        </span>
+						<div class="inline-flex mt-2 xs:mt-0">
+							<button
+                                class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded-l">
+                                Prev
+                            </button>
+							&nbsp; &nbsp;
+							<button
+                                class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded-r">
+                                Next
+                            </button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
