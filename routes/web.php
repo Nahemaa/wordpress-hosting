@@ -15,30 +15,11 @@ use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
-
-/*
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/login', [usersController::class,'login']);
-
-
-
-Route::get('/registration', function () {
-    return view('registration');
-});
-
-Route::get('/registration', [usersController::class,'registration']);
-
-
-*/
-
 Route::get('dashboard', [loginController::class, 'SignedIn'])->name('dashboard')->middleware('UserCheck');
 
 Route::get('/dtrlogs', [dtrlogsController::class, 'index'])->name('dtrlogs');
 
-Route::get('/employees', [employeesController::class, 'index'])->name('employees');
+Route::get('/employees', [employeesController::class, 'index'])->name('employees')->middleware('UserCheck');
 
 Route::get('/requests', [requestsController::class, 'index'])->name('requests');
 
@@ -46,7 +27,7 @@ Route::get('/messages', [messagesController::class, 'index'])->name('messages');
 
 Route::get('/payroll', [payrollController::class, 'index'])->name('payroll');
 
-Route::get('/login', [loginController::class, 'login'])->name('login');
+Route::get('/login', [loginController::class, 'login'])->name('login')->middleware('LoggedIN');
 
 Route::post('/login-user', [loginController::class, 'loginchecker'])->name('login-checker');
 

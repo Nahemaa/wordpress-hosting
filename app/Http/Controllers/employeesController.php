@@ -1,9 +1,14 @@
 <?php
 
+namespace App\Http\Middleware;
 namespace App\Http\Controllers;
 
 use App\Models\employees;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+Use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
 
 class employeesController extends Controller
 {
@@ -14,7 +19,20 @@ class employeesController extends Controller
      */
     public function index()
     {
-        return view('employees');
+        $data = array();
+            if (Session::has('loginID')) {
+
+                $data = User::where('id','=', Session::get('loginID'))->first();
+                return view('employees', compact('data'));
+            }
+        
+            return view('employees');
+
+            
+
+
+
+        
     }
 
     /**
