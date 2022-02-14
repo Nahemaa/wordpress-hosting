@@ -20,7 +20,7 @@
 				</li>
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
           <img src="https://img.icons8.com/windows/32/000000/money-transfer.png"/>
-          <span class="font-semibold text-lg pt-2">Payroll</span>
+          <span class="font-semibold text-lg pt-2">Payrollss</span>
 				</li>
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
 					<img src="https://img.icons8.com/ios-glyphs/30/000000/logout-rounded-down.png"/>
