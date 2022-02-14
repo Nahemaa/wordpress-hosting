@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 Use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class loginController extends Controller
 {
@@ -69,7 +70,7 @@ class loginController extends Controller
             'address' =>'required',
             'city' => 'required',
             'zip_code' =>'required|digits:4',
-            'contact_number' =>'required|digits:11'
+            'contact_number' =>'required|digits:11',
 
         ]);
     

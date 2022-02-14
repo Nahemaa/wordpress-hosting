@@ -29,8 +29,7 @@
 			</ul>
 		</div>
 	</div>
-</nav>
-
+	<main class="min-h-screen w-full bg-white">
 
 @if (session()->has('success'))
 <!-- Success Alert -->
@@ -142,7 +141,6 @@
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 						<p class="text-gray-900 whitespace-no-wrap">
 						
-
 						{{ date("M d Y", strtotime($employee->created_at)) }}
 						</p>
 						</td>
