@@ -24,17 +24,13 @@
 				</li>
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
 					<img src="https://img.icons8.com/ios-glyphs/30/000000/logout-rounded-down.png"/>
-					<span class="font-semibold text-lg pt-2">Log Out</span>
+					<span class="font-semibold text-lg pt-2">Hello, {{$data->first_name}}!</span>
 				</li>
 			</ul>
 		</div>
 	</div>
 </nav>
 
-
-<a>
-            Hello, {{$data->first_name}}!
-        </a>
 
 @if (session()->has('success'))
 <!-- Success Alert -->
@@ -142,27 +138,24 @@
                       <option>Marketing</option>
                     </select>
                   </div>
-								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">
-									{{$employee->created_at}}
-									</p>
-								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<span
-                                        class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                        <span aria-hidden
-                                            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-									<span class="relative">Active</span>
-									</span>
-								</td>
-							</tr>
+				  </td>
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">
+						
 
-						</tbody>
+						{{ date("M d Y", strtotime($employee->created_at)) }}
+						</p>
+						</td>
+
+								<td class="px-5 py-5 bg-white text-sm">
+									<button class="bg-yellow-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-yellow-500" @click="showModal4 = true">
+                    Edit
+                  </button>
+                  <button class="bg-red-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-red-500" @click="showModal4 = true">
+                    Delete
+                  </button>
+								</td>
 						@endforeach
-
-
-					
 					</table>
 					<div
 						class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
