@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('city');
             $table->string('zip_code');
             $table->string('contact_number');
-            $table->string('department')->default('assign a department');
+            $table->string('department')->default('guest');
             $table->rememberToken();
             $table->timestamps();
 
