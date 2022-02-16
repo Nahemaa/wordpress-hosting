@@ -20,11 +20,28 @@
 				</li>
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
           <img src="https://img.icons8.com/windows/32/000000/money-transfer.png"/>
-          <span class="font-semibold text-lg pt-2">Payroll</span>
+          <span class="font-semibold text-lg pt-2">
+			<a href="{{ route('payroll') }}" class="hover:text-gray-900">
+			  Payroll</a>
+			</span>
 				</li>
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
-					<img src="https://img.icons8.com/ios-glyphs/30/000000/logout-rounded-down.png"/>
-					<span class="font-semibold text-lg pt-2">Hello, {{$data->first_name}}!</span>
+					<img src="https://img.icons8.com/ios-glyphs/30/000000/gear.png"/>
+					<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+					<div @click.away="open = false" class="relative" x-data="{ open: false }">
+						<button @click="open = !open" class="pt-2">
+						  <span class="font-semibold text-lg pt-2">Hello, {{$data->first_name}}!</span>
+						  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+						</button>
+						<div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
+						  <div class="px-2 py-2 bg-purple-400 rounded-lg shadow dark-mode:bg-gray-800 font-semibold  text-sm">
+							<a class="flex space-x-2 pt-3 pl-5 cursor-pointer hover:text-black duration-150 rounded w-30 h-12 center hover:bg-purple-600" href="#">Account Settings</a>
+							<a class="flex space-x-2 pt-3 pl-5 cursor-pointer hover:text-black duration-150 rounded w-30 h-12 center hover:bg-purple-600" href="{{ route('logout') }}">Log Out</a>
+						  </div>
+						</div>
+					  </div>	 	
+					{{-- Dropdown --}}
+					
 				</li>
 			</ul>
 		</div>
@@ -176,7 +193,7 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 
 
 @endsection
