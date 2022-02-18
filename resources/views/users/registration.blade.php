@@ -74,7 +74,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+        <div class="flex-auto px-4 lg:px-10 py-20 pt-0">
             <h6 class="text-black-900 text-sm mt-3 mb-6 font-bold uppercase">
               Personal Data
             </h6>
@@ -133,6 +133,27 @@
                   <span class="text-danger">@error('confirm_password') {{ $message }} @enderror</span>
                 </div>
               </div>
+
+              <div class="w-full lg:w-12/12 px-4">
+                <div class="relative w-full mb-0 pb-10 mt-3">
+                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Department
+                  </label>
+                  <!-- Radio Buttons Sex -->
+                  <div class="relative inline-flex">
+                    <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
+                    <select name="department" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
+                      <option value="1">Human Resources</option>
+                      <option value="2">Logistics</option>
+                      <option value="3">Sales</option>
+                      <option value="4">Support</option>
+                      <option value="5">Marketing</option>
+                    </select>
+                  </div>                
+                </div>
+              </div>
+            {{-- </div> --}}
+
               <div class="w-full lg:w-6/12 px-4">
                 <div class="relative w-full mb-3">
                   <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
@@ -191,27 +212,12 @@
                 </div>
             </div>
 
-            <div class="w-full lg:w-6/12 px-4">
-                <div class="relative w-full mb-3">
-                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                    Department
-                  </label>
-                  <!-- Radio Buttons Sex -->
-                  <div class="relative inline-flex">
-                    <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
-                    <select name="department" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
-                      <option value="1">Human Resources</option>
-                      <option value="2">Logistics</option>
-                      <option value="3">Sales</option>
-                      <option value="4">Support</option>
-                      <option value="5">Marketing</option>
-                    </select>
-                  </div>
-                
-                </div>
-              </div>
             
-            <h6 class="text-black-900 text-msm mt-3 mb-6 font-bold uppercase">
+            
+            
+
+        </div>
+            <h6 class="text-black-900 text-msm mt-1 mb-6 font-bold uppercase">
               Other Information
             </h6>
             <div class="flex flex-wrap">
