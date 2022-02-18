@@ -22,7 +22,7 @@ class loginController extends Controller
 
     public function registration()
     {
-        return view ("users.registration");
+        return view ("users.registration", ['department' => User::all()]);
 
     }
 
