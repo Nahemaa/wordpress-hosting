@@ -1,8 +1,6 @@
 <?php
 namespace App\Http\Middleware;
 namespace App\Http\Controllers;
-use \Illuminate\Foundation\Auth\AuthenticatesUsers;
-
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -11,10 +9,13 @@ Use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Nullable;
+use \Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class loginController extends Controller
 {
     
+    use AuthenticatesUsers;
+
     public function login()
     {
         return view ("users.login");
@@ -36,6 +37,7 @@ class loginController extends Controller
             'confirm_email' =>'required|same:email',
             'password'=>'required|min:4|max:16',
             'confirm_password' =>'required|min:4|max:16|same:password',
+            'department' => 'required',
             'sex' =>'required',
             'marital_status' =>'required',
             'address' =>'required',
@@ -65,6 +67,7 @@ class loginController extends Controller
             'confirm_email' =>'required|same:email',
             'password'=>'required|min:4|max:16',
             'confirm_password' =>'required|min:4|max:16|same:password',
+            'department' => 'required',
             'sex' =>'required',
             'marital_status' =>'required',
             'address' =>'required',
@@ -81,6 +84,7 @@ class loginController extends Controller
         $user ->confirm_email = $request->confirm_email;
         $user ->password = Hash::make($request->password);
         $user ->confirm_password = Hash::make($request->confirm_password);
+        $user ->department = $request->department;
         $user ->sex = $request->sex;
         $user ->marital_status = $request->marital_status;
         $user ->address = $request->address;
@@ -99,6 +103,8 @@ class loginController extends Controller
 
     public function loginchecker(Request $request) {
 
+        $input = $request->all();
+
         $request->validate([
 
             'email'=>'required|email|exists:users,email',
@@ -106,70 +112,52 @@ class loginController extends Controller
 
         ]);
 
-        $validator = User::where('email','=', $request->email)->first();
+        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
+                
+            if (Auth::user()->department == '0') {
+                
+                return redirect ('hr_dashboard');
 
-        if ($validator) {
+            }
 
-            if (Hash::check($request->password, $validator->password)){
+            if (Auth::user()->department == '1' || '2' || '3' || '4') {
 
-                $request->session()->put('loginID', $validator->id);
                 return redirect ('dashboard');
 
-                } 
-
-                else {
-
-                    return redirect()->back()->withErrors('fail');
-
-                }
-
             }
 
-        } 
+            else {
 
-    public function SignedIn() {
+                return redirect('login')->with('fail', 'Login');
 
-            $data = array();
-            if (Session::has('loginID')) {
-
-                $data = User::where('id','=', Session::get('loginID'))->first();
-                return view('dashboard', compact('data'));
             }
-
-            return view('dashboard', compact('data'));
 
         }
 
+    }
+
+    public function SignedIn() {
+            
+                return view('dashboard');
+
+        }
+
+    public function HRSignedIn() {
+            
+            return view('hr_dashboard');
+
+    }
+
     public function logout() {
 
-        if (Session::has('loginID')){
-            Session::pull('loginID');
-            return redirect('login');
+        Auth::logout();
+        return redirect('login');
 
         }
 
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
     
 
 

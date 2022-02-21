@@ -6,6 +6,35 @@
 @section('content')
 
 
+
+@if (session()->get('fail'))
+
+<!--alert component-->
+<div class="text-red-800 px-1 py-1 border-red-300 border-b-2 rounded relative mb-3 bg-red-200">
+    <span class="text-xl inline-block mr-5 align-middle">
+    </span>
+    <span class="inline-block align-top mr-5 ml-1">
+      <b class="capitalize">Whoops! Something went wrong.</b> 
+      <br> Invalid Access!
+    </span>
+    <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-0 mr-3 outline-none focus:outline-none" onclick="closeAlert(event)">
+      <span>×</span>
+  
+    </button>
+  </div>
+  <script>
+    function closeAlert(event){
+      let element = event.target;
+      while(element.nodeName !== "BUTTON"){
+        element = element.parentNode;
+      }
+      element.parentNode.parentNode.removeChild(element.parentNode);
+    }
+  </script>
+
+@endif
+
+
 <!-- Navbar -->
 <nav class="text-black-200 bg-purple-500 body-font shadow w-full">
     <div class="container flex items-center p-6 mx-auto text-gray-800 capitalize dark:text-gray-300">
@@ -20,16 +49,10 @@
 
         <a href="{{ route('dtrlogs') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">DTR/Logs</a>
 
-        <a href="{{ route('employees') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Employees</a>
-
         <a href="{{ route('requests') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Requests</a>
 
-        <a href="{{ route('messages') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Messages</a>
-
-        <a href="{{ route('payroll') }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-purple-800 mx-1.5 sm:mx-6">Payroll</a>
-
         <a>
-            Hello, {{$data->first_name}}!
+          Hello,  {{ Auth::user()->first_name }}!
         </a>
 
         <a class="lg:ml-20 lg:m border-transparent bg-purple-500 hover:text-purple-300 hover:bg-purple-800 text-gray-800 ml-4 py-2 px-3 rounded-lg" href="{{ route('logout') }}">Log Out</a>

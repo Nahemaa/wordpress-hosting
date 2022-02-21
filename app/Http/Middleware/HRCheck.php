@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HRCheck
 {
@@ -16,12 +17,26 @@ class HRCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Session()->has('HRID')) {
-            
-            return redirect('dashboard')->with('fail', 'Login');
+        if (Auth::check()) {
 
+            if (Auth::User()->department == '0') {
+                
+                return $next($request);
+    
+            }
+    
+            if (Auth::User()->department == '1' || '2' || '3' || '4') {
+            
+                return redirect('dashboard')->with('fail', 'Login');
+    
+            }
+
+            else {
+                return redirect('login')->with('fail', 'Login');
+            }
+    
         }
 
-        return $next($request);
     }
+    
 }

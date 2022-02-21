@@ -30,7 +30,7 @@
 					<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 					<div @click.away="open = false" class="relative" x-data="{ open: false }">
 						<button @click="open = !open" class="pt-2">
-						  <span class="font-semibold text-lg pt-2">Hello, {{$data->first_name}}!</span>
+						  <span class="font-semibold text-lg pt-2">Hello,  {{ Auth::user()->first_name }}!</span>
 						  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
 						</button>
 						<div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
@@ -126,6 +126,7 @@
 							</tr>
 						</thead>
 						<tbody>
+
 						@foreach($employees as $employee)
 							<tr>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -145,18 +146,27 @@
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   <!-- Dropdown -->
 				 
-                  {{-- <div class="relative inline-flex">
-                    <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
-                    <select class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
-                      <option>Department</option>
-                      <option>Logistics</option>
-                      <option>Sales</option>
-                      <option>Support</option>
-                      <option>Marketing</option>
-                    </select>
-                  </div> --}}
-				
+                  <div class="relative inline-flex">
+                   
+					@if($employee->department == '0')
+					<p>Human Resources</p>
+					@endif
+					@if($employee->department == '1')
+					<p>Logistics</p>
+					@endif
+					@if($employee->department == '2')
+					<p>Sales</p>
+					@endif
+					@if($employee->department == '3')
+					<p>Support</p>
+					@endif
+					@if($employee->department == '4')
+					<p>Marketing</p>
+					@endif
 
+                  </div> 
+		
+				 
 
 				  
 				  </td>

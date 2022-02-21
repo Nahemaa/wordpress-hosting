@@ -32,9 +32,11 @@ Auth::routes();
 
 Route::get('dashboard', [loginController::class, 'SignedIn'])->name('dashboard')->middleware('UserCheck');
 
+Route::get('hr_dashboard', [loginController::class, 'HRSignedIn'])->name('hr_dashboard')->middleware('HRCheck');
+
 Route::get('/dtrlogs', [dtrlogsController::class, 'index'])->name('dtrlogs');
 
-Route::get('/employees', [employeesController::class, 'index'])->name('employees')->middleware('UserCheck');
+Route::get('/employees', [employeesController::class, 'index'])->name('employees')->middleware('HRCheck');
 
 Route::get('/requests', [requestsController::class, 'index'])->name('requests');
 

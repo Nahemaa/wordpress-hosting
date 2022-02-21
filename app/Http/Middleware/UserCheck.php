@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserCheck
 {
@@ -17,11 +18,27 @@ class UserCheck
     public function handle(Request $request, Closure $next)
     {
 
-        if(!Session()->has('loginID')) {
+        if (!Auth::check()) {
+
+            return redirect('login')->with('fail', 'Login');
+        
+        }
+
+        if (Auth::User()->department == '1' || '2' || '3' || '4') {
             
+            return $next($request);
+
+        }
+
+        if (Auth::User()->department == '0') {
+                
             return redirect('login')->with('fail', 'Login');
 
         }
-        return $next($request);
+
+
+        
     }
+
 }
+

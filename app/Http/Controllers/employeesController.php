@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\employees;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 Use Illuminate\Support\Facades\Validator;
@@ -20,31 +21,26 @@ class employeesController extends Controller
      */
     public function index()
     {
-        $data = array();
-            if (Session::has('loginID')) {
 
-                $employees = DB :: table('users')->get();
-                $data = User::where('id','=', Session::get('loginID'))->first();
-                return view('employees', compact('data', 'employees'));
+        if (Auth::User()->department == '0') {
+                
+            $employees = User::all();
+            return view('employees', ['employees'=>$employees]);
 
-            }
+        }
             
-            if (Session::has('loginID')){
-                Session::pull('loginID');
-                return redirect('login');
-    
-            }
-        
+        if (Auth::User()->department == '1' || '2' || '3' || '4') {
+            
+            return back()->with('fail', 'Login');
+
+        }
+
+        else {
+
+            return back()->with('fail', 'Login');
+
+        }
+
     }
-
-    public function EmployeesList() {
-
-        $employees = DB :: table('users')->get();
-        return view('employees', compact('employees'));
-
-    }
-
-
-
 
 }
