@@ -24,7 +24,7 @@ class employeesController extends Controller
 
         if (Auth::User()->department == '0') {
                 
-            $employees = User::all();
+            $employees = User::paginate(5);
             return view('employees', ['employees'=>$employees]);
 
         }
