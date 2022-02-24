@@ -10,9 +10,13 @@
 <div class="flex">
 	<div class="md:flex w-2/5 h-auto md:w-1/4 h-screen bg-purple-400 border-r hidden">
 		<div class="mx-auto py-10">
+
+		<a href="{{ route('hr_dashboard') }}">
 			<h1 class="text-2xl font-bold mb-10 cursor-pointer text-[#EC5252] duration-150">
         <img src="{{ asset('images/logo_caps.png') }}" style="height: 60px; margin-top: 1px; margin-bottom: 1px;"
         alt="logo"></h1>
+		</a>
+
 			<ul>
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600 bg-purple-600">
 					<img src="https://img.icons8.com/small/32/000000/conference.png"/>
@@ -166,9 +170,6 @@
 
                   </div> 
 		
-				 
-
-				  
 				  </td>
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 						<p class="text-gray-900 whitespace-no-wrap">
@@ -178,9 +179,6 @@
 						</td>
 
 				  <td class="px-5 py-5 bg-white text-sm">
-				  <button class="bg-green-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-green-500">
-                    View
-                  </button>
 				  <button class="bg-yellow-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-yellow-500" @click="showModal4 = true">
                     Edit
                   </button>
@@ -239,10 +237,10 @@
 						<span class="text-xs xs:text-sm text-purple-900"> {{ $users = DB::table('users')->simplePaginate(5); }}
                         </span>
 						<div class="inline-flex mt-2 xs:mt-0">
-							<button
-                                class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 mx-auto mt-2 rounded-md">
+							<a
+								 class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 mx-auto mt-2 rounded-md" 	href="{{ url('registration') }}">
                                 Add New Employee
-                            </button>
+							</a>
 					
 							
 						</div>

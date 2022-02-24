@@ -50,11 +50,13 @@ Route::post('/login-user', [loginController::class, 'loginchecker'])->name('logi
 
 Route::get('/logout', [loginController::class, 'logout'])->name('logout');
 
-Route::get('/registration', [loginController::class, 'registration']);
+Route::get('/registration', [employeesController::class, 'registration']);
 
-Route::post('/register-user', [loginController::class, 'checker'])->name('register-user');
+Route::post('/register-user', [employeesController::class, 'checker'])->name('register-user');
 
-Route::post('/register-user', [loginController::class, 'RegisterUser'])->name('register-user');
+Route::post('/register-user', [employeesController::class, 'RegisterUser'])->name('register-user');
 
+Route::get('/delete-user', [employeesController::class, 'delete-user'])->name('delete-user');
 
+Route::get('/update-user', [employeesController::class, 'update-user'])->name('update-user');
 

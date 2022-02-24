@@ -110,6 +110,7 @@
                     </div>
                     <div class="mb-6">
                         <button type="submit" class="w-full px-3 py-4 text-white bg-purple-500 rounded-md focus:bg-purple-600 focus:outline-none text-center">Sign in</button>
+
                     </div>
                 </form>
             </div>
