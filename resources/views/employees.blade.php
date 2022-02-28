@@ -109,6 +109,10 @@
 							<tr>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Employee's ID
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Name
 								</th>
 								<th
@@ -118,6 +122,14 @@
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Department
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Position
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Level
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -183,7 +195,7 @@
                     Edit
                   </button>
                   <button class="bg-red-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-red-500" onclick="toggleModal('modal-id')">
-                    Delete
+                    Remove
                   </button>
 				  
 				  <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
@@ -193,7 +205,7 @@
 						<!--header-->
 						<div class="flex items-start justify-between pl-5 pr-10 pb-3 pt-3 border-b border-solid border-blueGray-200 rounded-t">
 						  <h3 class="text-3xl font-semibold">
-							Delete this entry?
+							Remove this employee?
 						  </h3>
 						  <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id')">
 							<span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
@@ -204,7 +216,7 @@
 						<!--body-->
 						<div class="relative p-3 flex-auto">
 						  <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-							Are you sure to delete this entry?
+							Are you sure to remove this employee?
 						  </p>
 						</div>
 						<!--footer-->
@@ -242,6 +254,7 @@
                                 Add New Employee
 							</a>
 					
+
 							
 						</div>
 					</div>
