@@ -140,64 +140,48 @@
                     Department
                   </label>
                   <!-- Radio Buttons Sex -->
-                  <div class="relative inline-flex">
-                    <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
-                    <select name="department" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
-                      <option value="0">Human Resources</option>
-                      <option value="1">Logistics</option>
-                      <option value="2">Sales</option>
-                      <option value="3">Support</option>
-                      <option value="4">Marketing</option>
-                    </select>
-                    <span class="text-danger">@error('department') {{ $message }} @enderror</span>
-                  </div>                
-                </div>
-              </div>
-              {{-- </div> --}}
-            
-              <div class="w-full lg:w-12/12 px-4">
-                <div class="relative w-full mb-0 pb-10 mt-3">
-                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                    Position
-                  </label>
-                  <!-- Radio Buttons Sex -->
-                  <div class="relative inline-flex">
-                    <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
-                    <select name="department" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
-                      <option value="0">Human Resources</option>
-                      <option value="1">Logistics</option>
-                      <option value="2">Sales</option>
-                      <option value="3">Support</option>
-                      <option value="4">Marketing</option>
-                    </select>
-                    <span class="text-danger">@error('department') {{ $message }} @enderror</span>
-                  </div>                
-                </div>
-              </div>
-            
+              <style>
+                .dropdown:hover > .dropdown-content {
+                  display: block;
+                }
+                .dropdown-content a:hover{
 
-              <div class="w-full lg:w-12/12 px-4">
-                <div class="relative w-full mb-0 pb-10 mt-3">
-                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                    Level
-                  </label>
-                  <!-- Radio Buttons Sex -->
-                  <div class="relative inline-flex">
-                    <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
-                    <select name="department" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
-                      <option value="0">Human Resources</option>
-                      <option value="1">Logistics</option>
-                      <option value="2">Sales</option>
-                      <option value="3">Support</option>
-                      <option value="4">Marketing</option>
-                    </select>
-                    <span class="text-danger">@error('department') {{ $message }} @enderror</span>
-                  </div>                
+                }
+                </style>
+                
+                <div class="dropdown inline-block relative w-full lg:w-12/12 pb-40">
+                  <button class="bg-white text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+                    <span>HR Department 🠋</span>
+                  </button>
+                  <ul class="dropdown-content absolute hidden text-gray-700 pt-1">
+                        <li class="dropdown">
+                          <a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="#">HR Department 🠞</a>
+                            <ul class="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-10 ">
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Web Developer</a>
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Data Analyst</a>
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Encoder</a>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                          <a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="#">IT Department 🠞</a>
+                            <ul class="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-20">
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Web Developer</a>
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Data Analyst</a>
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Encoder</a>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                          <a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="#">Marketing Department 🠞</a>
+                            <ul class="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-32">
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Web Developer</a>
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Data Analyst</a>
+                              <li><a class="bg-purple-200 hover:bg-purple-400 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap ml-32 w-64" href="#">Encoder</a>
+                            </ul>
+                        </li>
+                  </ul>
                 </div>
-              </div>
-            
-            
-            
             
             
             
