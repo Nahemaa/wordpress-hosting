@@ -135,7 +135,7 @@
               </div>
 
               <div class="w-full lg:w-6/12 px-4">
-                <div class="f-group relative w-full mb-0 pb-5 mt-3">
+                <div class="relative w-full mb-0 pb-5 mt-3">
                   <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Department
                   </label>
@@ -153,7 +153,7 @@
                   </div>                
                 </div>
 
-                <div class="f-group relative w-full mb-0 pb-5 -mt-7">
+                <div class="relative w-full mb-0 pb-5 -mt-7">
                   <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Position
                   </label>
