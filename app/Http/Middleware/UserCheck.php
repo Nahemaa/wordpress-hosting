@@ -24,21 +24,19 @@ class UserCheck
         
         }
 
-        if (Auth::User()->department == '1' || '2' || '3' || '4') {
-            
-            return $next($request);
+       else {
 
-        }
+        return $next($request);
 
-        if (Auth::User()->department == '0') {
-                
-            return redirect('login')->with('fail', 'Login');
+       }
 
-        }
-
-
-        
     }
+    
+}
+/*
+if (Auth::User()->department == '1' || '2' || '3' || '4') {
+            
+    return $next($request);
 
 }
-
+*/

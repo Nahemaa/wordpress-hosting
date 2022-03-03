@@ -18,25 +18,23 @@ class HRCheck
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-
-            if (Auth::User()->department == '0') {
-                
+        
                 return $next($request);
     
-            }
-    
-            if (Auth::User()->department == '1' || '2' || '3' || '4') {
-            
-                return redirect('dashboard')->with('fail', 'Login');
-    
-            }
-
-            else {
-                return redirect('login')->with('fail', 'Login');
-            }
-    
         }
+
+        else {
+            return redirect('login')->with('fail', 'Login');
+        }
+
 
     }
     
 }
+/*
+if (Auth::User()->department == '0') {
+                
+    return $next($request);
+
+}
+*/

@@ -200,24 +200,30 @@
                             Level
                         </legend>            
                         <div class="flex items-center mb-4">
-                            <input id="country-option-1" type="radio" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-1" aria-describedby="country-option-1" name="sex" value="Male" {{ (old('sex') == 'Male') ? 'checked' : ''}}>
+                            <input id="country-option-1" type="radio" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-1" aria-describedby="country-option-1" name="level" value="Entry-Level" {{ (old('level') == 'Entry-Level') ? 'checked' : ''}}>
                             <label for="country-option-1" class="text-sm font-medium text-gray-900 ml-2 block">
-                            Level 1
+                            Entry-Level
                             </label>
                         </div>               
                         <div class="flex items-center mb-4">
-                            <input id="country-option-2" type="radio"  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2" name="sex" value="Female" {{ (old('sex') == 'Female') ? 'checked' : ''}}>
+                            <input id="country-option-2" type="radio"  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2" name="level" value="Intermediate-Level" {{ (old('level') == 'Intermediate-Level') ? 'checked' : ''}}>
                             <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
-                            Level 2
+                            Intermediate-Level
                             </label>
                         </div>
                         <div class="flex items-center mb-4">
-                          <input id="country-option-2" type="radio"  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2" name="sex" value="Female" {{ (old('sex') == 'Female') ? 'checked' : ''}}>
+                          <input id="country-option-2" type="radio"  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2" name="level" value="Mid-Level" {{ (old('level') == 'Mid-Level') ? 'checked' : ''}}>
                           <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
-                          Level 3
+                          Mid-Level
                           </label>
                       </div>
-                        <span class="text-danger">@error('sex') {{ $message }} @enderror</span>
+                      <div class="flex items-center mb-4">
+                          <input id="country-option-2" type="radio"  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2" name="level" value="Senior-Level" {{ (old('level') == 'Senior-Level') ? 'checked' : ''}}>
+                          <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
+                          Senior-Level
+                          </label>
+                      </div>
+                        <span class="text-danger">@error('level') {{ $message }} @enderror</span>
                     </fieldset>
                 </div>                
                 </div>

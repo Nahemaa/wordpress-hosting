@@ -28,10 +28,6 @@ Auth::routes();
 
 */
 
-
-
-Route::get('dashboard', [loginController::class, 'SignedIn'])->name('dashboard')->middleware('UserCheck');
-
 Route::get('hr_dashboard', [loginController::class, 'HRSignedIn'])->name('hr_dashboard')->middleware('HRCheck');
 
 Route::get('/dtrlogs', [dtrlogsController::class, 'index'])->name('dtrlogs');

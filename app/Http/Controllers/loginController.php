@@ -34,33 +34,17 @@ class loginController extends Controller
 
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
                 
-            if (Auth::user()->department == '0') {
-                
-                return redirect ('hr_dashboard');
+            return redirect ('hr_dashboard');
 
-            }
+        }
 
-            if (Auth::user()->department == '1' || '2' || '3' || '4') {
+        else {
 
-                return redirect ('dashboard');
-
-            }
-
-            else {
-
-                return redirect('login')->with('fail', 'Login');
-
-            }
+            return redirect('login')->with('fail', 'Login');
 
         }
 
     }
-
-    public function SignedIn() {
-            
-                return view('dashboard');
-
-        }
 
     public function HRSignedIn() {
             
@@ -78,8 +62,13 @@ class loginController extends Controller
     }
 
 
-    
+    /*
+    if (Auth::user()->department == '0') {
+                
+        return redirect ('hr_dashboard');
 
+    }
+    /*
 
         
 

@@ -3,15 +3,16 @@
 namespace App\Http\Middleware;
 namespace App\Http\Controllers;
 
-use App\Models\employees;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 Use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Session;
-Use Illuminate\Support\Facades\DB;
-use \Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Str;
+
+
+
 
 class employeesController extends Controller
 {
@@ -25,16 +26,10 @@ class employeesController extends Controller
     public function index()
     {
 
-        if (Auth::User()->department == '0') {
+        if (Auth::User()) {
                 
             $employees = User::paginate(5);
             return view('employees', ['employees'=>$employees]);
-
-        }
-            
-        if (Auth::User()->department == '1' || '2' || '3' || '4') {
-            
-            return back()->with('fail', 'Login');
 
         }
 
@@ -102,14 +97,15 @@ class employeesController extends Controller
 
         ]);
     
+
         $user = New User();
+        $user ->employee_id = $request->employee_id=Str::random(16);
         $user ->last_name = $request->last_name;
         $user ->first_name = $request->first_name;
         $user ->email = $request->email;
         $user ->confirm_email = $request->confirm_email;
         $user ->password = Hash::make($request->password);
         $user ->confirm_password = Hash::make($request->confirm_password);
-        $user ->department = $request->department;
         $user ->sex = $request->sex;
         $user ->marital_status = $request->marital_status;
         $user ->address = $request->address;
@@ -119,7 +115,7 @@ class employeesController extends Controller
         $res = $user->save();
         
                 if ($res){
-            
+
                 return redirect('employees')->withSuccess('success');
        
             }

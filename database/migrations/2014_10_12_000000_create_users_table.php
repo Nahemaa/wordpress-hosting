@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             
             $table->id();
+            $table->string('employee_id')->unique();
             $table->string('last_name');
             $table->string('first_name');
             $table->string('email')->unique();
@@ -28,7 +29,6 @@ class CreateUsersTable extends Migration
             $table->string('city');
             $table->string('zip_code');
             $table->string('contact_number');
-            $table->integer('department')->default('0');
             $table->rememberToken();
             $table->timestamps();
 
@@ -36,8 +36,12 @@ class CreateUsersTable extends Migration
     }
 
     /**
+     *             $table->integer('department')->default('0');
+         *   $table->integer('position');
+          *  $table->string('level');
      * Reverse the migrations.
      *
+     * 
      * @return void
      */
     public function down()

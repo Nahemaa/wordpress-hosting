@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-
 class LoggedIN
 {
     /**
@@ -23,5 +22,6 @@ class LoggedIN
             return redirect()->back();
         }
         return $next($request);
+        
     }
 }
