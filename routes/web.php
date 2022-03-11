@@ -34,6 +34,10 @@ Route::get('/dtrlogs', [dtrlogsController::class, 'index'])->name('dtrlogs');
 
 Route::get('/employees', [employeesController::class, 'index'])->name('employees')->middleware('HRCheck');
 
+Route::get('getjoblevels', [employeesController::class, 'getLevel'])->name('getLevel'); 
+
+Route::get('getjobpositions', [employeesController::class, 'getPosition'])->name('getPosition');
+
 Route::get('/requests', [requestsController::class, 'index'])->name('requests');
 
 Route::get('/messages', [messagesController::class, 'index'])->name('messages');
@@ -47,7 +51,7 @@ Route::post('/login-user', [loginController::class, 'loginchecker'])->name('logi
 Route::get('/logout', [loginController::class, 'logout'])->name('logout');
 
 Route::get('/registration', [employeesController::class, 'registration']);
-
+    
 Route::post('/register-user', [employeesController::class, 'checker'])->name('register-user');
 
 Route::post('/register-user', [employeesController::class, 'RegisterUser'])->name('register-user');
@@ -55,4 +59,6 @@ Route::post('/register-user', [employeesController::class, 'RegisterUser'])->nam
 Route::get('/delete-user', [employeesController::class, 'delete-user'])->name('delete-user');
 
 Route::get('/update-user', [employeesController::class, 'update-user'])->name('update-user');
+
+
 

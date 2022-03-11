@@ -3,14 +3,18 @@
 namespace App\Http\Middleware;
 namespace App\Http\Controllers;
 
+
 use App\Models\User;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 Use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Str;
-
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 
 
@@ -42,10 +46,45 @@ class employeesController extends Controller
     }
 
     public function registration()
+
+//return view ("users.registration", ['department' => User::all()]);
+
+/*
+$departments['department'] = Departments::get(["name", "id"]);
+       return view ("users.registration", $departments);
+*/
+
     {
-        return view ("users.registration", ['department' => User::all()]);
+
+        $departments = DB::table("departments")->pluck("name", "id");
+        return view('users.registration', compact('departments'));
+
 
     }
+
+    public function getLevel(Request $request) {
+
+        $levels = DB::table("job_level")
+            ->where("department_id", $request->department_id)
+            ->pluck("name", "id");
+        return response()->json($levels);
+        
+    }
+
+    public function getPosition(Request $request) {
+
+        
+        $positions = DB::table("job_position")
+            ->where("position_id", $request->position_id)
+            ->pluck("name", "id");
+        return response()->json($positions);
+
+    }
+
+
+
+
+
 
     public function checker(Request $request) 
     {

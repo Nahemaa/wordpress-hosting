@@ -13,6 +13,9 @@
          <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
          <!-- Tailwind -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
@@ -134,6 +137,14 @@
                 </div>
               </div>
 
+
+     
+                
+
+
+
+
+
               <div class="w-full lg:w-6/12 px-4">
                 <div class="relative w-full mb-0 pb-5 mt-3">
                   <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
@@ -143,99 +154,133 @@
                   <div class="relative inline-flex">
                     <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
                     <select name="department" id="department" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
-                      <option value="0">Human Resources</option>
-                      <option value="1">Logistics</option>
-                      <option value="2">Sales</option>
-                      <option value="3">Support</option>
-                      <option value="4">Marketing</option>
+                      <option value="" selected disabled>Select Department</option>
+                      @foreach ($departments as $key => $department)
+                            <option value="{{ $key }}">
+                                {{$department}}
+                            </option>
+                       @endforeach
                     </select>
-                    <span class="text-danger">@error('department') {{ $message }} @enderror</span>
                   </div>                
                 </div>
-
-                <div class="relative w-full mb-0 pb-5 -mt-7">
+              
+                <div class="w-full lg:w-6/12 px-4">
+                <div class="relative w-full mb-0 pb-5 mt-3">
                   <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                    Position
+                    Job Level
+                  </label>
+                  <!-- Radio Buttons Sex -->
+                  <div class="relative inline-flex">
+                    <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
+                    <select name="level" id="level" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
+                  
+                    </select>
+                  </div>                
+                </div>
+                </div>
+             
+                <div class="w-full lg:w-6/12 px-4">
+                <div class="relative w-full mb-0 pb-5 mt-3">
+                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Job Position
                   </label>
                   <!-- Radio Buttons Sex -->
                   <div class="relative inline-flex">
                     <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
                     <select name="position" id="position" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
-                      <option value="1">Postion 1</option>
-                      <option value="1">Position 1</option>
-                      <option value="1">Position 1</option>
-                      <option value="2">Position 2</option>
-                      <option value="2">Position 2</option>
-                      <option value="3">Position 3</option>
+               
+                   
                     </select>
-                    <span class="text-danger">@error('department') {{ $message }} @enderror</span>
                   </div>                
                 </div>
-              </div>
-
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-              <script>
-                var $department = $('#department'),
-                    $position = $('#position'),
-                    $options = $position.find('option');
-
-                    $department.on('change', function()
-                    {
-                      $position.html( $options.filter( '[value="'+ this.value +'"]'));
-                    } ).trigger('change');
-                
-              </script>
-
-
-              {{-- Level --}}
-              <div class="w-full lg:w-4/12 px-4">
-                <div class="relative w-full mb-0 pb-1 mt-3">
-                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                    Level
-                  </label>
-                  <!-- Radio Buttons Sex -->
-                  <div class="max-w-lg mx-auto">
-                    <fieldset class="mb-5">
-                        <legend class="sr-only">
-                            Level
-                        </legend>            
-                        <div class="flex items-center mb-4">
-                            <input id="country-option-1" type="radio" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-1" aria-describedby="country-option-1" name="level" value="Entry-Level" {{ (old('level') == 'Entry-Level') ? 'checked' : ''}}>
-                            <label for="country-option-1" class="text-sm font-medium text-gray-900 ml-2 block">
-                            Entry-Level
-                            </label>
-                        </div>               
-                        <div class="flex items-center mb-4">
-                            <input id="country-option-2" type="radio"  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2" name="level" value="Intermediate-Level" {{ (old('level') == 'Intermediate-Level') ? 'checked' : ''}}>
-                            <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
-                            Intermediate-Level
-                            </label>
-                        </div>
-                        <div class="flex items-center mb-4">
-                          <input id="country-option-2" type="radio"  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2" name="level" value="Mid-Level" {{ (old('level') == 'Mid-Level') ? 'checked' : ''}}>
-                          <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
-                          Mid-Level
-                          </label>
-                      </div>
-                      <div class="flex items-center mb-4">
-                          <input id="country-option-2" type="radio"  class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2" name="level" value="Senior-Level" {{ (old('level') == 'Senior-Level') ? 'checked' : ''}}>
-                          <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
-                          Senior-Level
-                          </label>
-                      </div>
-                        <span class="text-danger">@error('level') {{ $message }} @enderror</span>
-                    </fieldset>
-                </div>                
                 </div>
-              </div>
-            
-            
-            
-            
-            
-            
-            
-              {{-- </div> --}}
+
+                <script>
+        // when department dropdown changes
+        $('#department').change(function() {
+
+            var departmentID = $(this).val();
+
+            if (departmentID) {
+
+                $.ajax({
+                    type: "GET",
+                    url: "{{ url('getjoblevels') }}?department_id=" + departmentID,
+                    success: function(res) {
+
+                        if (res) {
+
+                            $("#level").empty();
+                            $("#level").append('<option selected disabled>Select Job Level</option>');
+                            $.each(res, function(key, value) {
+                                $("#level").append('<option value="' + key + '">' + value +
+                                    '</option>');
+                            });
+
+                        } else {
+
+                            $("#level").empty();
+                        }
+                    }
+                });
+            } else {
+
+                $("#level").empty();
+                $("#department").empty();
+            }
+        });
+
+        // when state dropdown changes
+        $('#level').on('change', function() {
+
+            var levelID = $(this).val();
+
+            if (levelID) {
+
+                $.ajax({
+                    type: "GET",
+                    url: "{{ url('getjobpositions') }}?position_id=" + levelID,
+                    success: function(res) {
+
+                        if (res) {
+                            $("#position").empty();
+                            $("#position").append('<option selected disabled>Select Job Position</option>');
+                            $.each(res, function(key, value) {
+                                $("#position").append('<option value="' + key + '">' + value +
+                                    '</option>');
+                            });
+
+                        } else {
+
+                            $("#position").empty();
+                        }
+                    }
+                });
+            } else {
+
+                $("#position").empty();
+                
+            }
+        });
+
+    </script>
+
+
+
+
+
+   
+
+        
+
+
+
+
+
+
+
+
+
               <div class="w-full lg:w-6/12 px-4">
                 <div class="relative w-full mb-3">
                   <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
