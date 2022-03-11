@@ -35,6 +35,13 @@ class employeesController extends Controller
             $employees = User::paginate(5);
             return view('employees', ['employees'=>$employees]);
 
+
+
+
+
+
+            
+
         }
 
         else {
@@ -101,7 +108,6 @@ $departments['department'] = Departments::get(["name", "id"]);
 
         $validator = Validator::make($request->all, $request);
 
-
         if($validator->fails()){
 
             return redirect()->back()->with($validator);
@@ -130,7 +136,6 @@ $departments['department'] = Departments::get(["name", "id"]);
 
         ]);
     
-
         $user = New User();
         $user ->employee_id = $request->employee_id=Str::random(16);
         $user ->last_name = $request->last_name;
@@ -139,9 +144,13 @@ $departments['department'] = Departments::get(["name", "id"]);
         $user ->confirm_email = $request->confirm_email;
         $user ->password = Hash::make($request->password);
         $user ->confirm_password = Hash::make($request->confirm_password);
+
         $user ->department = $request->department;
+
         $user ->job_level = $request->job_level;
+
         $user ->job_position = $request->job_position;
+
         $user ->sex = $request->sex;
         $user ->marital_status = $request->marital_status;
         $user ->address = $request->address;

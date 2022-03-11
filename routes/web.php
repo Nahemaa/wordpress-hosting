@@ -34,6 +34,8 @@ Route::get('/dtrlogs', [dtrlogsController::class, 'index'])->name('dtrlogs');
 
 Route::get('/employees', [employeesController::class, 'index'])->name('employees')->middleware('HRCheck');
 
+
+
 Route::get('getjoblevels', [employeesController::class, 'getLevel'])->name('getLevel'); 
 
 Route::get('getjobpositions', [employeesController::class, 'getPosition'])->name('getPosition');

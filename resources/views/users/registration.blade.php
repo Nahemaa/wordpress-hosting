@@ -137,14 +137,6 @@
                 </div>
               </div>
 
-
-     
-                
-
-
-
-
-
               <div class="w-full lg:w-4/12 px-4">
                 <div class="relative w-full mb-2 pb-5 mt-3">
                   <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
@@ -160,6 +152,7 @@
                                 {{$department}}
                             </option>
                        @endforeach
+                       
                     </select>
                   </div>                
                 </div>
@@ -173,7 +166,7 @@
                   <!-- Radio Buttons Sex -->
                   <div class="relative inline-flex">
                     <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
-                    <select name="level" id="level" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
+                    <select name="job_level" id="job_level" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
                   
                     </select>
                   </div>                
@@ -188,7 +181,7 @@
                   <!-- Radio Buttons Sex -->
                   <div class="relative inline-flex">
                     <svg class="w-2 h-2 absolute top-0 right-1 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/></svg>
-                    <select name="position" id="position" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
+                    <select name="job_position" id="job_position" class="border border-black-300 rounded-full text-black-600 h-10 pl-5 pr-10 bg-white hover:border-black-400 focus:outline-none appearance-none">
                
                    
                     </select>
@@ -211,28 +204,28 @@
 
                         if (res) {
 
-                            $("#level").empty();
-                            $("#level").append('<option selected disabled>Select Job Level</option>');
+                            $("#job_level").empty();
+                            $("#job_level").append('<option selected disabled>Select Job Level</option>');
                             $.each(res, function(key, value) {
-                                $("#level").append('<option value="' + key + '">' + value +
+                                $("#job_level").append('<option value="' + key + '">' + value +
                                     '</option>');
                             });
 
                         } else {
 
-                            $("#level").empty();
+                            $("#job_level").empty();
                         }
                     }
                 });
             } else {
 
-                $("#level").empty();
+                $("#job_level").empty();
                 $("#department").empty();
             }
         });
         
         // when state dropdown changes
-        $('#level').on('change', function() {
+        $('#job_level').on('change', function() {
 
             var levelID = $(this).val();
           
@@ -245,59 +238,29 @@
                     success: function(res) {
 
                         if (res) {
-                            $("#position").empty();
-                            $("#position").append('<option selected disabled>Select Job Position</option>');
+                            $("#job_position").empty();
+                            $("#job_position").append('<option selected disabled>Select Job Position</option>');
                             $.each(res, function(key, value) {
-                                $("#position").append('<option value="' + key + '">' + value +
+                                $("#job_position").append('<option value="' + key + '">' + value +
                                     '</option>');
                             });
 
                         } else {
 
-                            $("#position").empty();
+                            $("#job_position").empty();
                         }
                     }
                 });                
 
-
-
-
-
-
             } else {
 
-                $("#position").empty();
+                $("#job_position").empty();
 
             }
-
-
-
-
-
-
-
-
-
-
 
         });
 
     </script>
-
-
-
-
-
-   
-
-        
-
-
-
-
-
-
-
 
 
               <div class="w-full lg:w-6/12 px-4">

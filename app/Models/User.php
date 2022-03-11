@@ -20,6 +20,8 @@ class User extends Authenticatable
         'password',
         'confirm_password',
         'department',
+        'job_level',
+        'job_position',
         'sex',
         'marital_status',
         'address',
