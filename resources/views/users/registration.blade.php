@@ -229,11 +229,12 @@
                 $("#department").empty();
             }
         });
-
+        
         // when state dropdown changes
         $('#level').on('change', function() {
 
             var levelID = $(this).val();
+          
 
             if (levelID) {
 
@@ -255,12 +256,29 @@
                             $("#position").empty();
                         }
                     }
-                });
+                });                
+
+
+
+
+
+
             } else {
 
                 $("#position").empty();
-                
+
             }
+
+
+
+
+
+
+
+
+
+
+
         });
 
     </script>

@@ -59,7 +59,6 @@ $departments['department'] = Departments::get(["name", "id"]);
         $departments = DB::table("departments")->pluck("name", "id");
         return view('users.registration', compact('departments'));
 
-
     }
 
     public function getLevel(Request $request) {
@@ -80,11 +79,6 @@ $departments['department'] = Departments::get(["name", "id"]);
         return response()->json($positions);
 
     }
-
-
-
-
-
 
     public function checker(Request $request) 
     {
