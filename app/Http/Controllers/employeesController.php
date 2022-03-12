@@ -36,12 +36,6 @@ class employeesController extends Controller
             return view('employees', ['employees'=>$employees]);
 
 
-
-
-
-
-            
-
         }
 
         else {
