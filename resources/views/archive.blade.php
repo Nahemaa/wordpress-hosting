@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'employees')
+@section('title', 'archive')
 
 
 @section('content')
@@ -72,7 +72,7 @@
 	</div>
 	<main class="min-h-screen w-10/12 bg-white">
 
-@if (session()->has('success'))
+{{-- @if (session()->has('success'))
 <!-- Success Alert -->
 <div class="text-green-800 px-1 py-1 border-green-300 border-b-2 rounded relative bg-green-200 ml-2 mr-2 mt-2">
 	<span class="text-xl inline-block mr-5 align-middle">
@@ -95,7 +95,7 @@
 	  element.parentNode.parentNode.removeChild(element.parentNode);
 	}
   </script>
-@endif
+@endif --}}
 
 
 
@@ -103,8 +103,8 @@
 <div class="bg-white p-8 rounded-md w-full">
 	<div class=" flex items-center justify-between pb-6">
 		<div>
-			<h1 class="text-gray-600 font-semibold">Employees</h1>
-			<span class="text-sm">All employees list</span>
+			<h1 class="text-gray-600 font-semibold">Archive</h1>
+			<span class="text-sm">Archive list</span>
 		</div>
 		<div class="flex items-center justify-between">
 			<div class="flex bg-gray-50 items-center p-2 rounded-md">
@@ -210,7 +210,7 @@
 						</p>
 						</td>
 
-				  <td class="px-5 py-5 bg-white text-sm">
+				  {{-- <td class="px-5 py-5 bg-white text-sm">
 				  <button class="bg-yellow-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-yellow-500" @click="showModal4 = true">
                     Edit
                   </button>
@@ -261,7 +261,7 @@
 					}
 				  </script>
 
-								</td>
+								</td> --}}
 						@endforeach
 					</table>
 					<div
@@ -270,12 +270,8 @@
                         </span>
 						<div class="inline-flex mt-2 xs:mt-0">
 							<a
-								 class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 mx-auto mt-2 rounded-md" 	href="{{ url('registration') }}">
-                                Add New Employee
-							</a>
-							<a
-								 class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 ml-3 mt-2 rounded-md" 	href="{{ url('registration') }}">
-                                Archive
+								 class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 mx-auto mt-2 rounded-md" 	href="{{ url('employees') }}">
+                                Return to Employees List
 							</a>
 					
 

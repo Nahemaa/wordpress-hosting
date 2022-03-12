@@ -8,12 +8,20 @@
 <!-- Navbar -->
 
 <div class="flex">
-	<div class="md:flex w-2/5 h-auto md:w-1/4 h-screen bg-purple-400 border-r hidden">
-		<div class="mx-auto py-10">
+	<div class="md:flex w-2/5 h-auto md:w-2/12 h-screen bg-purple-400 border-r hidden">
+		<div class="mx-auto py-10 w-64">
 			<h1 class="text-2xl font-bold mb-10 cursor-pointer text-[#EC5252] duration-150">
         <img src="{{ asset('images/logo_caps.png') }}" style="height: 60px; margin-top: 1px; margin-bottom: 1px;"
         alt="logo"></h1>
 			<ul>
+				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
+					<img src="https://img.icons8.com/material-outlined/24/000000/dashboard-layout.png"/>
+					<span class="font-semibold text-lg pt-2">
+					  <a href="{{ route('hr_dashboard') }}" class="hover:text-gray-900">
+						Dashboard</a>
+					  </span>
+				</li>
+
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
 					<img src="https://img.icons8.com/small/32/000000/conference.png"/>
 					<span class="font-semibold  text-lg pt-2">
@@ -25,12 +33,25 @@
           <img src="https://img.icons8.com/windows/32/000000/money-transfer.png"/>
           <span class="font-semibold text-lg pt-2">Payroll</span>
 				</li>
+				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
+					<img src="https://img.icons8.com/small/32/000000/conference.png"/>
+					<span class="font-semibold  text-lg pt-2">
+                    <a href="{{ route('dtrlogs') }}" class="hover:text-gray-900">
+                    DTR Logs</a></span>
+				</li>
+                <li class="flex space-x-2 mt-5 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
+					<img src="https://img.icons8.com/material-outlined/24/000000/leave.png"/>
+					<span class="font-semibold text-lg pt-2">
+                    <a href="{{ route('requests') }}" class="hover:text-gray-900">
+						Requests</a>
+					  </span>
+				</li>
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600 ">
 					<img src="https://img.icons8.com/ios-glyphs/30/000000/gear.png"/>
 					<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 					<div @click.away="open = false" class="relative" x-data="{ open: false }">
 						<button @click="open = !open" class="pt-2">
-						  <span class="font-semibold text-lg pt-2">Hello, Gabales!</span>
+							<span class="font-semibold text-lg pt-2">Hello,  {{ Auth::user()->first_name }}!</span>
 						  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
 						</button>
 						<div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
@@ -46,7 +67,7 @@
 			</ul>
 		</div>
 	</div>
-	<main class="min-h-screen w-full bg-white">
+	<main class="min-h-screen w-10/12 bg-white">
 
 
 

@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\accountinfoController;
 use App\Http\Controllers\accountinformationController;
+use App\Http\Controllers\archiveController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\dtrlogsController;
 use App\Http\Controllers\employeesController;
@@ -61,6 +62,8 @@ Route::post('/register-user', [employeesController::class, 'RegisterUser'])->nam
 Route::get('/delete-user', [employeesController::class, 'delete-user'])->name('delete-user');
 
 Route::get('/update-user', [employeesController::class, 'update-user'])->name('update-user');
+
+Route::get('/archive', [archiveController::class, 'archive'])->name('archive');
 
 
 
