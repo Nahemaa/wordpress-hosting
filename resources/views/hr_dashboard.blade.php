@@ -7,7 +7,7 @@
 
 
 <div class="flex">
-	<div class="md:flex w-2/5 h-auto md:w-2/12 h-screen bg-purple-400 border-r hidden">
+	    <div class="md:flex w-2/5 h-auto md:w-2/12 h-screen bg-purple-400 border-r hidden">
 		<div class="mx-auto py-10 w-64">
 
 		<a href="{{ route('hr_dashboard') }}">
@@ -38,12 +38,12 @@
 			        </span>
 				</li>
                 <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
-					<img src="https://img.icons8.com/small/32/000000/conference.png"/>
+					<img src="https://img.icons8.com/fluency-systems-filled/48/000000/timer.png"/>
 					<span class="font-semibold  text-lg pt-2">
                     <a href="{{ route('dtrlogs') }}" class="hover:text-gray-900">
                     DTR Logs</a></span>
 				</li>
-                <li class="flex space-x-2 mt-5 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
+                <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
 					<img src="https://img.icons8.com/material-outlined/24/000000/leave.png"/>
 					<span class="font-semibold text-lg pt-2">
                     <a href="{{ route('requests') }}" class="hover:text-gray-900">

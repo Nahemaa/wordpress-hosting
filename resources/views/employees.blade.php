@@ -8,8 +8,8 @@
 <!-- Navbar -->
 
 <div class="flex">
-	<div class="md:flex w-2/5 h-auto md:w-1/4 h-screen bg-purple-400 border-r hidden">
-		<div class="mx-auto py-10">
+		<div class="md:flex w-2/5 h-auto md:w-2/12 h-screen bg-purple-400 border-r hidden">
+		<div class="mx-auto py-10 w-64">
 
 		<a href="{{ route('hr_dashboard') }}">
 			<h1 class="text-2xl font-bold mb-10 cursor-pointer text-[#EC5252] duration-150">
@@ -18,18 +18,16 @@
 		</a>
 
 			<ul>
-				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600 bg-purple-600">
+				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
                     <img src="https://img.icons8.com/material-outlined/24/000000/dashboard-layout.png"/>
                     <span class="font-semibold text-lg pt-2">
 					<a href="{{ route('hr_dashboard') }}" class="hover:text-gray-900"> 
-					Dashboard
-					</span>
+					Dashboard</a></span>
 				</li>
-				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
+				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600 bg-purple-600">
 					<img src="https://img.icons8.com/small/32/000000/conference.png"/>
 					<span class="font-semibold  text-lg pt-2">
-                    <a href="{{ route('employees') }}" class="hover:text-gray-900">
-                    Employees</a></span>
+                    Employees</span>
 				</li>
 				
                 <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
@@ -40,12 +38,12 @@
 			        </span>
 				</li>
                 <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
-					<img src="https://img.icons8.com/small/32/000000/conference.png"/>
+					<img src="https://img.icons8.com/fluency-systems-filled/48/000000/timer.png"/>
 					<span class="font-semibold  text-lg pt-2">
                     <a href="{{ route('dtrlogs') }}" class="hover:text-gray-900">
                     DTR Logs</a></span>
 				</li>
-                <li class="flex space-x-2 mt-5 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
+                <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
 					<img src="https://img.icons8.com/material-outlined/24/000000/leave.png"/>
 					<span class="font-semibold text-lg pt-2">
                     <a href="{{ route('requests') }}" class="hover:text-gray-900">
@@ -86,7 +84,7 @@
 
 		</div>
 	</div>
-	<main class="min-h-screen w-full bg-white">
+	<main class="min-h-screen w-10/12 bg-white">
 
 @if (session()->has('success'))
 <!-- Success Alert -->
@@ -120,7 +118,7 @@
 	<div class=" flex items-center justify-between pb-6">
 		<div>
 			<h1 class="text-gray-600 font-semibold">Employees</h1>
-			<span class="text-xs">All employees list</span>
+			<span class="text-sm">All employees list</span>
 		</div>
 		<div class="flex items-center justify-between">
 			<div class="flex bg-gray-50 items-center p-2 rounded-md">
@@ -266,7 +264,7 @@
 							Cancel
 						  </button>
 						  <button class="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-							Delete
+							Remove
 						  </button>
 						</div>
 					  </div>
@@ -294,8 +292,13 @@
 								 class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 mx-auto mt-2 rounded-md" 	href="{{ url('registration') }}">
                                 Add New Employee
 							</a>
-					
+							
+							<a
+								 class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 ml-3 mt-2 rounded-md" 	href="{{ url('archive') }}">
+                                Archive
+							</a>
 						</div>
+						
 					</div>
 				</div>
 			</div>

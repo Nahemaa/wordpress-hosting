@@ -12,7 +12,7 @@
         <img src="{{ asset('images/logo_caps.png') }}" style="height: 60px; margin-top: 1px; margin-bottom: 1px;"
         alt="logo"></h1>
 			<ul>
-				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
+				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 hover:bg-purple-600">
 					<img src="https://img.icons8.com/material-outlined/24/000000/dashboard-layout.png"/>
 					<span class="font-semibold text-lg pt-2">
 					  <a href="{{ route('hr_dashboard') }}" class="hover:text-gray-900">
@@ -20,29 +20,29 @@
 					  </span>
 				</li>
 
-				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
+				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 hover:bg-purple-600">
 					<img src="https://img.icons8.com/small/32/000000/conference.png"/>
-					<span class="font-semibold  text-lg pt-2">
+					<span class="font-semibold text-lg pt-2">
             <a href="{{ route('employees') }}" class="hover:text-gray-900">
             Employees</a>
           </span>
 				</li>
-				<li class="flex space-x-2 mt-5 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
+				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 hover:bg-purple-600">
           <img src="https://img.icons8.com/windows/32/000000/money-transfer.png"/>
           <a href="{{ route('payroll') }}" class="hover:text-gray-900">
           <span class="font-semibold text-lg pt-2">Payroll</span>
           </a>
 				</li>
-        <li class="flex space-x-2 mt-5 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600 bg-purple-600">
+        <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600 bg-purple-600">
 					<img src="https://img.icons8.com/fluency-systems-filled/48/000000/timer.png"/>
 					<span class="font-semibold text-lg pt-2">
 						DTR Logs
 					  </span>
 				</li>
-        <li class="flex space-x-2 mt-5 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
+        <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
 					<img src="https://img.icons8.com/material-outlined/24/000000/leave.png"/>
 					<span class="font-semibold text-lg pt-2">
-            <a href="{{ route('employees') }}" class="hover:text-gray-900">
+            <a href="{{ route('requests') }}" class="hover:text-gray-900">
 						Requests</a>
 					  </span>
 				</li>
@@ -76,8 +76,8 @@
 <div class="bg-white p-8 rounded-md w-full">
 	<div class=" flex items-center justify-between pb-6">
 		<div>
-			<h1 class="text-gray-600 font-semibold">Payroll</h1>
-			<span class="text-xs">Employees Salary</span>
+			<h1 class="text-gray-600 font-semibold">Daily Time Record</h1>
+			<span class="text-sm">Employees DTR</span>
 		</div>
 		<div class="flex items-center justify-between">
 			<div class="flex bg-gray-50 items-center p-2 rounded-md">
