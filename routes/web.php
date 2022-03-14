@@ -35,7 +35,7 @@ Route::get('/dtrlogs', [dtrlogsController::class, 'index'])->name('dtrlogs');
 
 Route::get('/employees', [employeesController::class, 'index'])->name('employees')->middleware('HRCheck');
 
-
+Route::get('/archive', [archiveController::class, 'index'])->name('archive');
 
 Route::get('getjoblevels', [employeesController::class, 'getLevel'])->name('getLevel'); 
 
@@ -63,7 +63,6 @@ Route::get('/delete-user', [employeesController::class, 'delete-user'])->name('d
 
 Route::get('/update-user', [employeesController::class, 'update-user'])->name('update-user');
 
-Route::get('/archive', [archiveController::class, 'archive'])->name('archive');
 
 
 

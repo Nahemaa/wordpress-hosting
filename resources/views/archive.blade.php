@@ -2,7 +2,6 @@
 
 @section('title', 'archive')
 
-
 @section('content')
 
 <!-- Navbar -->
@@ -163,50 +162,33 @@
 						</thead>
 						<tbody>
 
-						@foreach($employees as $employee)
+				
 							<tr>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<div class="flex items-center">
 											<div class="ml-3">
 												<p class="text-gray-900 whitespace-no-wrap">
-													{{$employee->last_name}}, 
-													{{$employee->first_name}}
+										
 												</p>
 											</div>
 										</div>
 								</td>
 						
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">{{$employee->email}}</p>
+									<p class="text-gray-900 whitespace-no-wrap"></p>
 								</td>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   <!-- Dropdown -->
 				 
                   <div class="relative inline-flex">
                    
-					@if($employee->department == '0')
-					<p>Human Resources</p>
-					@endif
-					@if($employee->department == '1')
-					<p>Logistics</p>
-					@endif
-					@if($employee->department == '2')
-					<p>Sales</p>
-					@endif
-					@if($employee->department == '3')
-					<p>Support</p>
-					@endif
-					@if($employee->department == '4')
-					<p>Marketing</p>
-					@endif
-
+					
                   </div> 
 		
 				  </td>
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 						<p class="text-gray-900 whitespace-no-wrap">
 						
-						{{ date("M d Y", strtotime($employee->created_at)) }}
 						</p>
 						</td>
 
@@ -262,7 +244,7 @@
 				  </script>
 
 								</td> --}}
-						@endforeach
+					
 					</table>
 					<div
 						class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
@@ -274,8 +256,6 @@
                                 Return to Employees List
 							</a>
 					
-
-							
 						</div>
 					</div>
 				</div>

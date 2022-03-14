@@ -31,9 +31,12 @@ class employeesController extends Controller
     {
 
         if (Auth::User()) {
-                
-            $employees = User::paginate(5);
-            return view('employees', ['employees'=>$employees]);
+            
+            
+        $employees = User::paginate(5);
+        return view('employees', ['employees'=>$employees]);
+
+
 
 
         }
@@ -46,14 +49,16 @@ class employeesController extends Controller
 
     }
 
-    public function registration()
-
-//return view ("users.registration", ['department' => User::all()]);
-
 /*
-$departments['department'] = Departments::get(["name", "id"]);
-       return view ("users.registration", $departments);
+
+$employees = User::paginate(5);
+return view('employees', ['employees'=>$employees]);
+
 */
+
+
+
+    public function registration()
 
     {
 
@@ -61,6 +66,13 @@ $departments['department'] = Departments::get(["name", "id"]);
         return view('users.registration', compact('departments'));
 
     }
+
+    //return view ("users.registration", ['department' => User::all()]);
+
+    /*
+    $departments['department'] = Departments::get(["name", "id"]);
+       return view ("users.registration", $departments);
+*/
 
     public function getLevel(Request $request) {
 
