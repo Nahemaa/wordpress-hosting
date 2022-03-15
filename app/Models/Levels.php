@@ -11,7 +11,7 @@ class Levels extends Model
 
     protected $fillable = [
         
-        'name',
+        'level_name',
         'department_id',
         'level_id',
        

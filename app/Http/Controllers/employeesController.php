@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 namespace App\Http\Controllers;
 
 
-use App\Models\User;
+use App\Models\User, App\Models\Departments, App\Models\Levels, App\Models\Positions;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -31,10 +31,14 @@ class employeesController extends Controller
     {
 
         if (Auth::User()) {
-            
-            
-        $employees = User::paginate(5);
-        return view('employees', ['employees'=>$employees]);
+     
+        $employees = User::join('departments', 'departments.id', '=', 'users.department')
+                            ->join('job_level', 'job_level.id', '=', 'users.job_level')
+                            ->join('job_position', 'job_position.id', '=', 'users.job_position')
+                            ->get(['users.id', 'users.employee_id', 'users.last_name', 'users.first_name', 'users.email', 'departments.department_name', 'job_level.level_name', 'job_position.position_name', 'users.created_at']);
+
+
+        return view('employees', compact('employees'));
 
 
 
@@ -62,7 +66,7 @@ return view('employees', ['employees'=>$employees]);
 
     {
 
-        $departments = DB::table("departments")->pluck("name", "id");
+        $departments = DB::table("departments")->pluck("department_name", "id");
         return view('users.registration', compact('departments'));
 
     }
@@ -78,7 +82,7 @@ return view('employees', ['employees'=>$employees]);
 
         $levels = DB::table("job_level")
             ->where("department_id", $request->department_id)
-            ->pluck("name", "id");
+            ->pluck("level_name", "id");
         return response()->json($levels);
         
     }
@@ -88,7 +92,7 @@ return view('employees', ['employees'=>$employees]);
         
         $positions = DB::table("job_position")
             ->where("position_id", $request->position_id)
-            ->pluck("name", "id");
+            ->pluck("position_name", "id");
         return response()->json($positions);
 
     }

@@ -11,7 +11,7 @@ class Positions extends Model
 
     protected $fillable = [
         
-        'name',
+        'position_name',
         'position_id'
 
     ];

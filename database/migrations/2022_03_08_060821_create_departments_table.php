@@ -15,19 +15,19 @@ class CreateDepartmentsTable extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('department_name');
             $table->timestamps();
         });
         Schema::create('job_level', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('level_name');
             $table->integer('department_id');
             $table->integer('level_id');            
             $table->timestamps();
         });
         Schema::create('job_position', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('position_name');
             $table->integer('position_id');            
             $table->timestamps();
         });

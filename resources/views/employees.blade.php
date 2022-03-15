@@ -199,29 +199,42 @@
 									<p class="text-gray-900 whitespace-no-wrap">{{$employee->email}}</p>
 								</td>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                  <!-- Dropdown -->
-				 
-                  <div class="relative inline-flex">
-                   
-					@if($employee->department == '0')
-					<p>Human Resources</p>
-					@endif
-					@if($employee->department == '1')
-					<p>Operations Management</p>
-					@endif
-					@if($employee->department == '2')
-					<p>Marketing</p>
-					@endif
-					@if($employee->department == '3')
-					<p>IT</p>
-					@endif
-					@if($employee->department == '4')
-					<p>Finance</p>
-					@endif
+                 		 <!-- Dropdown -->
+                  			<div class="relative inline-flex">
 
-                  </div> 
-		
-				  </td>
+				  				{{$employee->department_name}}
+
+                  			</div> 
+				  				</td>
+
+								  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+												{{$employee->level_name}}	
+													
+												</p>
+											</div>
+										</div>
+								</td>
+
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+												{{$employee->position_name}}
+													
+												</p>
+											</div>
+										</div>
+								</td>
+
+
+
+						
+				  				  
+
+
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 						<p class="text-gray-900 whitespace-no-wrap">
 						
