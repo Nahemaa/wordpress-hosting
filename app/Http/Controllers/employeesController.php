@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 namespace App\Http\Controllers;
 
 
-use App\Models\User, App\Models\Departments, App\Models\Levels, App\Models\Positions;
+use App\Models\User, App\Models\Archive;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -139,6 +139,8 @@ return view('employees', ['employees'=>$employees]);
             'contact_number' =>'required|digits:11',
 
         ]);
+
+        //$user ->confirm_password = Hash::make($request->confirm_password);
     
         $user = New User();
         $user ->employee_id = $request->employee_id=Str::random(16);
@@ -176,5 +178,40 @@ return view('employees', ['employees'=>$employees]);
             }
 
     }
+
+    public function MovetoArchive($id) {
+
+        $hireduser = User::where('id',$id)->first();
+
+        $employeeid = $hireduser->employee_id;
+        $lastname = $hireduser->last_name;
+        $firstname = $hireduser->first_name;
+        $email = $hireduser->email;
+        $password = $hireduser->password;
+        $department = $hireduser->department;
+        $level = $hireduser->job_level;
+        $position = $hireduser->job_position;
+        $createdat = $hireduser->created_at;
+
+        $hireduser->delete();
+
+        $fireduser = New archive();
+
+        $fireduser->employee_id = $employeeid;
+        $fireduser->last_name = $lastname;
+        $fireduser->first_name = $firstname;
+        $fireduser->email = $email;
+        $fireduser->password = $password;
+        $fireduser->department = $department;
+        $fireduser->job_level = $level;
+        $fireduser->job_position = $position;
+        $fireduser->created_at = $createdat;
+
+        $fireduser->save();
+
+        return redirect('employees');
+
+    }
+
 
 }

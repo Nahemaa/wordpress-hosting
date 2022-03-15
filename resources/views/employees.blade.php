@@ -72,16 +72,6 @@
 				</li>
 			</ul>
 
-
-
-
-
-
-
-
-
-
-
 		</div>
 	</div>
 	<main class="min-h-screen w-10/12 bg-white">
@@ -180,6 +170,8 @@
 						@foreach($employees as $employee)
 							<tr>
 
+							<td hidden>{{$employee->id}}</td>
+
 							<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<p class="text-gray-900 whitespace-no-wrap">{{$employee->employee_id}}</p>
 							</td>
@@ -189,7 +181,7 @@
 											<div class="ml-3">
 												<p class="text-gray-900 whitespace-no-wrap">
 													{{$employee->last_name}}, 
-													{{$employee->first_name}}
+													{{$employee->first_name}},
 												</p>
 											</div>
 										</div>
@@ -232,7 +224,7 @@
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 						<p class="text-gray-900 whitespace-no-wrap">
 						
-						{{ date("M d Y", strtotime($employee->created_at)) }}
+						{{ date("h:i A - M d, Y", strtotime($employee->created_at)) }}
 						</p>
 						</td>
 
@@ -270,9 +262,11 @@
 						  <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
 							Cancel
 						  </button>
-						  <button class="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-							Remove
+							
+						  <button class="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit" onclick="toggleModal('modal-id')">
+							<a href="{{ route('movetoarchive',$employee->id) }}">Remove</a>	
 						  </button>
+					
 						</div>
 					  </div>
 					</div>

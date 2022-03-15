@@ -152,53 +152,91 @@
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Employee Registered
+									Employee Hired
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Status
+									Employee Terminated
 								</th>
 							</tr>
 						</thead>
 						<tbody>
+	
+						@foreach($employees as $employee)
 
-				
 							<tr>
+
+							<td hidden>{{$employee->id}}</td>
+
+							<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">{{$employee->employee_id}}</p>
+							</td>
+
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<div class="flex items-center">
 											<div class="ml-3">
 												<p class="text-gray-900 whitespace-no-wrap">
-										
+													{{$employee->last_name}}, 
+													{{$employee->first_name}}
 												</p>
 											</div>
 										</div>
 								</td>
 						
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap"></p>
+									<p class="text-gray-900 whitespace-no-wrap">{{$employee->email}}</p>
 								</td>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   <!-- Dropdown -->
 				 
                   <div class="relative inline-flex">
                    
-					
+				  {{$employee->department_name}}
+
                   </div> 
 		
 				  </td>
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 						<p class="text-gray-900 whitespace-no-wrap">
 						
+						{{$employee->level_name}}	
+
 						</p>
-						</td>
+				  </td>
+
+					<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+												
+												{{$employee->position_name}}
+													
+												</p>
+											</div>
+									</div>
+					</td>
+
+					<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">
+						
+						{{ date("h:i A - M d, Y", strtotime($employee->created_at)) }}
+						</p>
+						
+					</td>
+
+					<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">
+						
+						{{ date("h:i A - M d, Y", strtotime($employee->updated_at)) }}
+						</p>
+						
+					</td>
+
+
+
 
 				  {{-- <td class="px-5 py-5 bg-white text-sm">
-				  <button class="bg-yellow-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-yellow-500" @click="showModal4 = true">
-                    Edit
-                  </button>
-                  <button class="bg-red-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-red-500" onclick="toggleModal('modal-id')">
-                    Remove
-                  </button>
+
 				  
 				  <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
 					<div class="relative w-auto my-6 mx-auto max-w-lg">
@@ -221,15 +259,7 @@
 							Are you sure to remove this employee?
 						  </p>
 						</div>
-						<!--footer-->
-						<div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-						  <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-							Cancel
-						  </button>
-						  <button class="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-							Remove
-						  </button>
-						</div>
+					
 					  </div>
 					</div>
 				  </div>
@@ -244,7 +274,7 @@
 				  </script>
 
 								</td> --}}
-					
+								@endforeach
 					</table>
 					<div
 						class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
