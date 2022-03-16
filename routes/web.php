@@ -13,6 +13,7 @@ use App\Http\Controllers\requestsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usersController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\salarymanagerController;
 use App\Models\employees;
 use Illuminate\Support\Facades\Auth;
 Auth::routes();
@@ -63,6 +64,6 @@ Route::post('/register-user', [employeesController::class, 'RegisterUser'])->nam
 
 Route::get('/update-user', [employeesController::class, 'update-user'])->name('update-user');
 
-
+Route::get('/salary_manager', [salarymanagerController::class, 'index'])->name('salary_manager');
 
 
