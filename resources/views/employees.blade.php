@@ -230,7 +230,7 @@
 
 				  <td class="px-5 py-5 bg-white text-sm">
 				  <button class="bg-yellow-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-yellow-500" @click="showModal4 = true">
-                    Edit
+                    <a href="{{ route('edituser', $employee->id) }}">Edit</a>
                   </button>
                   <button class="bg-red-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-red-500" onclick="toggleModal('modal-id')">
                     Remove

@@ -38,6 +38,10 @@ Route::get('/employees', [employeesController::class, 'index'])->name('employees
 
 Route::get('/movetoarchive{id}', [employeesController::class, 'MovetoArchive'])->name('movetoarchive');
 
+Route::get('edituser{id}', [employeesController::class, 'EditUser'])->name('edituser');
+
+Route::put('updateuser/{id}', [employeesController::class, 'UpdateUser'])->name('updateuser');
+
 Route::get('/archive', [archiveController::class, 'index'])->name('archive');
 
 Route::get('getjoblevels', [employeesController::class, 'getLevel'])->name('getLevel'); 
@@ -61,8 +65,6 @@ Route::get('/registration', [employeesController::class, 'registration']);
 Route::post('/register-user', [employeesController::class, 'checker'])->name('register-user');
 
 Route::post('/register-user', [employeesController::class, 'RegisterUser'])->name('register-user');
-
-Route::get('/update-user', [employeesController::class, 'update-user'])->name('update-user');
 
 Route::get('/salary_manager', [salarymanagerController::class, 'index'])->name('salary_manager');
 

@@ -54,8 +54,6 @@ return view('employees', ['employees'=>$employees]);
 
 */
 
-
-
     public function registration()
 
     {
@@ -208,6 +206,37 @@ return view('employees', ['employees'=>$employees]);
         $fireduser->created_at = $createdat;
 
         $fireduser->save();
+
+        return redirect('employees');
+
+    }
+
+    public function EditUser($id) {
+
+        $departments = DB::table("departments")->pluck("department_name", "id");
+        $employees = User::find($id);
+        return view('users.edituser', compact('employees', 'departments'));
+
+    }
+
+    public function UpdateUser(Request $request, $id) {
+
+        $employees = User::find($id);
+        $employees->last_name = $request->input('last_name');
+        $employees->first_name = $request->input('first_name');
+        $employees->email = $request->input('email');
+        $employees->confirm_email = $request->input('confirm_email');
+        $employees->password = Hash::make($request->input('password'));
+        $employees->confirm_password = Hash::make($request->input('confirm_password'));
+        $employees->department = $request->input('department');
+        $employees->job_level = $request->input('job_level');
+        $employees->job_position = $request->input('job_position');
+        $employees->address = $request->input('address');
+        $employees->city = $request->input('city');
+        $employees->zip_code = $request->input('zip_code');
+        $employees->contact_number = $request->input('contact_number');
+
+        $employees->update();
 
         return redirect('employees');
 

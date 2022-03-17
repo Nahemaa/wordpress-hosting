@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\payroll;
+use App\Models\payroll, App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class payrollController extends Controller
 {
@@ -14,7 +15,12 @@ class payrollController extends Controller
      */
     public function index()
     {
+
+        if (Auth::User()) {
+            
         return view('payroll');
+
+        }
     }
 
     /**

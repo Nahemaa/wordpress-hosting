@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\salarymanager;
+use App\Models\salarymanager, App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class salarymanagerController extends Controller
 {
@@ -14,7 +15,14 @@ class salarymanagerController extends Controller
      */
     public function index()
     {
-        return view('salary_manager');
+
+        if (Auth::User()) {
+            
+            return view('salary_manager');
+    
+            }
+
+
     }
 
     /**
