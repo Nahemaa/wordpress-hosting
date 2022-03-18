@@ -213,8 +213,16 @@ return view('employees', ['employees'=>$employees]);
 
     public function EditUser($id) {
 
+        
         $departments = DB::table("departments")->pluck("department_name", "id");
-        $employees = User::find($id);
+        $employees = User::find($id)
+                            ->join('departments', 'departments.id', '=', 'users.department')
+                            ->join('job_level', 'job_level.id', '=', 'users.job_level')
+                            ->join('job_position', 'job_position.id', '=', 'users.job_position')
+                            ->get(['users.id', 'users.employee_id', 'users.last_name', 'users.first_name', 'users.email', 'departments.department_name', 'job_level.level_name', 'job_position.position_name', 'users.created_at']);
+
+        
+        ;
         return view('users.edituser', compact('employees', 'departments'));
 
     }
