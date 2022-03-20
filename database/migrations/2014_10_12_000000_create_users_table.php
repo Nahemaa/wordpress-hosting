@@ -23,9 +23,9 @@ class CreateUsersTable extends Migration
             $table->string('confirm_email')->unique();
             $table->string('password');
             $table->string('confirm_password');
-            $table->string('department');
-            $table->string('job_level');
-            $table->string('job_position');
+            $table->string('department')->nullable();
+            $table->string('job_level')->nullable();
+            $table->string('job_position')->nullable();
             $table->string('sex');
             $table->string('marital_status');
             $table->string('address');

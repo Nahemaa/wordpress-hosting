@@ -215,27 +215,38 @@ return view('employees', ['employees'=>$employees]);
 
         
         $departments = DB::table("departments")->pluck("department_name", "id");
-        $employees = User::find($id)
-                            ->join('departments', 'departments.id', '=', 'users.department')
-                            ->join('job_level', 'job_level.id', '=', 'users.job_level')
-                            ->join('job_position', 'job_position.id', '=', 'users.job_position')
-                            ->get(['users.id', 'users.employee_id', 'users.last_name', 'users.first_name', 'users.email', 'departments.department_name', 'job_level.level_name', 'job_position.position_name', 'users.created_at']);
 
+        $employees = User::join('departments', 'departments.id', '=', 'users.department')
+        ->join('job_level', 'job_level.id', '=', 'users.job_level')
+        ->join('job_position', 'job_position.id', '=', 'users.job_position')
+        ->select([ 'users.*', 'departments.department_name', 'job_level.level_name', 'job_position.position_name'])
+        ->find($id);
         
-        ;
         return view('users.edituser', compact('employees', 'departments'));
 
-    }
+    }  
 
     public function UpdateUser(Request $request, $id) {
+
+        $request->validate([
+
+            'last_name' =>'required',
+            'first_name' =>'required',
+            'email'=>'required|email',
+            'confirm_email' =>'required|same:email',
+            'department' => 'required',
+            'address' =>'required',
+            'city' => 'required',
+            'zip_code' =>'required|digits:4',
+            'contact_number' =>'required|digits:11',
+
+        ]);
 
         $employees = User::find($id);
         $employees->last_name = $request->input('last_name');
         $employees->first_name = $request->input('first_name');
         $employees->email = $request->input('email');
         $employees->confirm_email = $request->input('confirm_email');
-        $employees->password = Hash::make($request->input('password'));
-        $employees->confirm_password = Hash::make($request->input('confirm_password'));
         $employees->department = $request->input('department');
         $employees->job_level = $request->input('job_level');
         $employees->job_position = $request->input('job_position');
