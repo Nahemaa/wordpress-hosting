@@ -120,8 +120,7 @@
             <h6 class="text-black-700 text-xl font-bold">
               Add New Department
             </h6>
-
-            <button class="bg-purple-500 text-white active:bg-purple-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="submit">
+            <button class="bg-purple-500 text-white active:bg-purple-600 hover:bg-purple-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="submit">
               Save
             </button>
           </div>
@@ -233,10 +232,13 @@
             
               <div class="w-full lg:w-12/12 px-4 mt-4">
                 <a
-                     class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 mx-auto mt-2 rounded-md" 	href="{{ url('registration') }}">
+                     class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 mx-auto mt-2 rounded-md" 	href="#">
                     View Existing Departments
                 </a>
-                
+                <a
+                     class="btn btn-primary text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-10 mx-auto mt-2 rounded-md" 	href="{{ url('payroll') }}">
+                    Back to Payroll
+                </a>
             </div>
 
         </div>

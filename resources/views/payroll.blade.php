@@ -101,23 +101,47 @@
 							<tr>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Employee
+									Name
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Position
+									Work Days
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Salary
+									Basic
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Date Transferred
+									HRA
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Actions
+									Con
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Inc
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Gross
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									PF
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									ESI
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Deductions
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Payable
 								</th>
 							</tr>
 						</thead>
@@ -133,39 +157,63 @@
 										</div>
 								</td>
 						
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">Logistics</p>
-								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">25,000</p>
-				        </td>
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-              <p class="text-gray-900 whitespace-no-wrap">February 01, 2022</p>
+						<p class="text-gray-900 whitespace-no-wrap">30 Days</p>
 						</td>
 
-								<td class="px-5 py-5 bg-white text-sm">
-									<button class="bg-yellow-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-yellow-500" @click="showModal4 = true">
-                    Edit
-                  </button>
-                  <button class="bg-red-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-red-500" @click="showModal4 = true">
-                    Delete
-                  </button>
-								</td>
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  		<p class="text-gray-900 whitespace-no-wrap">???</p>
+				        </td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              			<p class="text-gray-900 whitespace-no-wrap">???</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">$22,000</p>
+						</td>
+
+								
 					</table>
-					<div
-						class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
-						<span class="text-xs xs:text-sm text-gray-900">
+					<div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+						{{-- <span class="text-xs xs:text-sm text-gray-900">
                             Showing 1 to 10 of 30 Entries
-                        </span>
+                        </span> --}}
 						<div class="inline-flex mt-2 xs:mt-0">
-							<button
+							{{-- <button
                                 class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded-l">
                                 Prev
                             </button>
-							&nbsp; &nbsp;
+							&nbsp; &nbsp; --}}
 							<button
-                                class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded-r">
-                                Next
+                                class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded">
+                                <a href="{{ route('salary_manager') }}" class="text-white">
+								Add New Department
+								</a>
                             </button>
 						</div>
 					</div>
