@@ -4,6 +4,7 @@
 use App\Http\Controllers\accountinfoController;
 use App\Http\Controllers\accountinformationController;
 use App\Http\Controllers\archiveController;
+use App\Http\Controllers\changepasswordController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\dtrlogsController;
 use App\Http\Controllers\employeesController;
@@ -68,4 +69,5 @@ Route::post('/register-user', [employeesController::class, 'RegisterUser'])->nam
 
 Route::get('/salary_manager', [salarymanagerController::class, 'index'])->name('salary_manager');
 
+Route::get('/change_password', [changepasswordController::class, 'index'])->name('change_password');
 

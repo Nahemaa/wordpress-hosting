@@ -72,7 +72,10 @@
             <form action= "{{ url('updateuser/'.$employees->id) }}" method = "POST">
             @csrf
             @method('PUT')
-
+            <button class="bg-purple-500 text-white active:bg-purple-600 hover:bg-purple-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
+              <a href="{{ route('employees') }}" class="text-white">
+              Cancel</a>
+            </button>
             <button class="bg-purple-500 text-white active:bg-purple-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="submit">
               Save
             </button>
