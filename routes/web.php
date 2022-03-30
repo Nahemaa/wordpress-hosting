@@ -69,5 +69,9 @@ Route::post('/register-user', [employeesController::class, 'RegisterUser'])->nam
 
 Route::get('/salary_manager', [salarymanagerController::class, 'index'])->name('salary_manager');
 
+Route::post('/add-job', [salarymanagerController::class, 'addnewposition'])->name('add-job');
+
 Route::get('/change_password', [changepasswordController::class, 'index'])->name('change_password');
+
+
 

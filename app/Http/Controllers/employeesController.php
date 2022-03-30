@@ -81,7 +81,6 @@ return view('employees', ['employees'=>$employees]);
 
     public function getPosition(Request $request) {
 
-        
         $positions = DB::table("job_position")
             ->where("position_id", $request->position_id)
             ->pluck("position_name", "id");
@@ -223,7 +222,7 @@ return view('employees', ['employees'=>$employees]);
         ->find($id);
         
         return view('users.edituser', compact('employees', 'departments'));
-
+        
     }  
 
     public function UpdateUser(Request $request, $id) {
@@ -260,6 +259,5 @@ return view('employees', ['employees'=>$employees]);
         return redirect('employees');
 
     }
-
 
 }

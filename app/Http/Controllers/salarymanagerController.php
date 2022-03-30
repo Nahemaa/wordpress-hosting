@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\salarymanager, App\Models\User;
+use App\Models\salarymanager, App\Models\User, App\Models\Positions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class salarymanagerController extends Controller
 {
@@ -18,12 +19,64 @@ class salarymanagerController extends Controller
 
         if (Auth::User()) {
             
-            return view('salary_manager');
+            $departments = DB::table("departments")->pluck("department_name", "id");
+
+            return view('salary_manager', compact('departments'));
     
             }
 
+        else
+         {
+
+                return back()->with('fail', 'Login');
+    
+        }
+
 
     }
+
+    public function getLevel(Request $request) {
+
+        $levels = DB::table("job_level")
+            ->where("department_id", $request->department_id)
+            ->pluck("level_name", "id");
+        return response()->json($levels);
+        
+    }
+
+    public function addnewposition(Request $request) {
+
+      $position = New Positions();
+
+      $position ->position_name = $request->job_position;
+      $position ->position_id = $request->job_level;
+
+      $res = $position->save();
+        
+      
+      if ($res){
+
+      return redirect('payroll')->withSuccess('success');
+
+  }
+
+  else {
+
+      return redirect()->back()->with('fail');
+
+  }
+
+
+
+
+    }
+
+
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
