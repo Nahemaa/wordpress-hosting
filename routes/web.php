@@ -7,6 +7,7 @@ use App\Http\Controllers\archiveController;
 use App\Http\Controllers\changepasswordController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\dtrlogsController;
+use App\Http\Controllers\dtrtimeController;
 use App\Http\Controllers\employeesController;
 use App\Http\Controllers\messagesController;
 use App\Http\Controllers\payrollController;
@@ -72,6 +73,8 @@ Route::get('/salary_manager', [salarymanagerController::class, 'index'])->name('
 Route::post('/add-job', [salarymanagerController::class, 'addnewposition'])->name('add-job');
 
 Route::get('/change_password', [changepasswordController::class, 'index'])->name('change_password');
+
+Route::get('/dtrtime', [dtrtimeController::class, 'index'])->name('dtrtime');
 
 
 

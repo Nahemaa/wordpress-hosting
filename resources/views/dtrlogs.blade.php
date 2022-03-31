@@ -125,7 +125,15 @@
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Date and Time
+									Date
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Time In
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Time Out
 								</th>
 							</tr>
 						</thead>
@@ -157,25 +165,33 @@
               <p class="text-gray-900 whitespace-no-wrap">Senior HR</p>
 						</td>
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-              <p class="text-gray-900 whitespace-no-wrap">March 12, 2022 11:20pm</p>
+              <p class="text-gray-900 whitespace-no-wrap">March 12, 2022</p>
 						</td>
+			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+				<p class="text-gray-900 whitespace-no-wrap">8:00am</p>
+						</td>
+			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+				<p class="text-gray-900 whitespace-no-wrap">5:00pm</p>
+						</td>
+
 
 								
 					</table>
-					<div
-						class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
-						<span class="text-xs xs:text-sm text-gray-900">
+					<div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+						{{-- <span class="text-xs xs:text-sm text-gray-900">
                             Showing 1 to 10 of 30 Entries
-                        </span>
+                        </span> --}}
 						<div class="inline-flex mt-2 xs:mt-0">
-							<button
+							{{-- <button
                                 class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded-l">
                                 Prev
                             </button>
-							&nbsp; &nbsp;
+							&nbsp; &nbsp; --}}
 							<button
-                                class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded-r">
-                                Next
+                                class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded">
+                                <a href="{{ route('dtrtime') }}" class="text-white">
+								Time In/Out
+								</a>
                             </button>
 						</div>
 					</div>
