@@ -15,6 +15,7 @@ use App\Http\Controllers\requestsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usersController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\qrscannerController;
 use App\Http\Controllers\salarymanagerController;
 use App\Models\employees;
 use Illuminate\Support\Facades\Auth;
@@ -75,6 +76,8 @@ Route::post('/add-job', [salarymanagerController::class, 'addnewposition'])->nam
 Route::get('/change_password', [changepasswordController::class, 'index'])->name('change_password');
 
 Route::get('/dtrtime', [dtrtimeController::class, 'index'])->name('dtrtime');
+
+Route::get('/qrscanner', [qrscannerController::class, 'index'])->name('qrscanner');
 
 
 

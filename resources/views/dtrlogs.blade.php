@@ -189,8 +189,8 @@
 							&nbsp; &nbsp; --}}
 							<button
                                 class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded">
-                                <a href="{{ route('dtrtime') }}" class="text-white">
-								Time In/Out
+                                <a href="{{ route('qrscanner') }}" class="text-white">
+								QR Code Scanner
 								</a>
                             </button>
 						</div>
