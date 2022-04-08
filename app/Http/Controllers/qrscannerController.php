@@ -32,17 +32,35 @@ class qrscannerController extends Controller
 
         $present->employee_id = $request->attendance;
         $present->time_in = $date;
-        $present->time_out = $request->format("Y-m-d H:i:s");
-        $present->log_date = $request->format("Y-m-d H:i:s");
-        $present->status = $request->format("Y-m-d H:i:s");
-
-
+        $present->time_out = $request->input('time_out', "no time-out data entry");
+        $present->log_date = $request->input('log_date', "no log date data entry");
+        $present->status = $request->input('status', 0);
 
         $present->save();
 
         return view('qrscanner');
         
         }
+
+        if (qrscanner::where('employee_id', $request->attendance )->exists()) {
+
+        $timeout = qrscanner::find('employee_id');
+
+        $date = Carbon::now();
+
+        $timeout->time_out = $date;
+        $timeout->log_date = $date;
+        $timeout->status = $request->input('status', 1);
+
+        $timeout->update();
+
+        return view('qrscanner');
+
+
+            
+        }
+
+
 
         else {
 
