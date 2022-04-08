@@ -40,15 +40,14 @@ class qrscannerController extends Controller
 
         $present->save();
 
-
-
-
-
-
-
-        
         return view('qrscanner');
         
+        }
+
+        else {
+
+            return view('qrscanner');
+
         }
 
     }
