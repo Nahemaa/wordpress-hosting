@@ -38,7 +38,7 @@
 	</span>
 	<span class="inline-block align-top mr-5 ml-1">
 	  <b class="capitalize">Success!</b> 
-	  <br>Your time in was recorded!
+	  <br>Your time out was recorded!
 	</span>
 	<button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-0 mr-3 outline-none focus:outline-none" onclick="closeAlert(event)">
 	  <span>×</span>
@@ -50,7 +50,7 @@
     <span class="text-xl inline-block mr-5 align-middle">
     </span>
     <span class="inline-block align-top mr-5 ml-1">
-      <b class="capitalize">Time in unsucessful.</b> 
+      <b class="capitalize">Time out unsucessful.</b> 
       <br> Scan failed. Please try again.
     </span>
     <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-0 mr-3 outline-none focus:outline-none" onclick="closeAlert(event)">
@@ -75,12 +75,11 @@
         <div class="rounded-t bg-white mb-0 px-6 py-6">
           <div class="text-center flex justify-between">
             
-          <form action= "{{ url('attendancecheck') }}" method = "POST">
+          <form>
 
-            @csrf
 
             <h6 class="text-black-700 text-xl font-bold text-left">
-              Time In
+              Time Out
             </h6>
             
             <button class="bg-purple-500 text-white active:bg-purple-600 hover:bg-purple-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">

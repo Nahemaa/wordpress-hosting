@@ -17,6 +17,7 @@ use App\Http\Controllers\usersController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\qrscannerController;
 use App\Http\Controllers\salarymanagerController;
+use App\Http\Controllers\timeoutController;
 use App\Models\employees;
 use Illuminate\Support\Facades\Auth;
 Auth::routes();
@@ -80,4 +81,6 @@ Route::get('/dtrtime', [dtrtimeController::class, 'index'])->name('dtrtime');
 Route::get('/qrscanner', [qrscannerController::class, 'index'])->name('qrscanner');
 
 Route::post('/attendancecheck', [qrscannerController::class, 'attendance'])->name('attendancecheck');
+
+Route::get('/timeout', [timeoutController::class, 'index'])->name('timeout');
 
