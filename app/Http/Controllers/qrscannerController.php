@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\qrscanner;
 use Illuminate\Http\Request;
+use App\Models\qrscanner, App\Models\User;
+use Carbon\Carbon;
+
+
+
 
 class qrscannerController extends Controller
 {
@@ -16,70 +20,40 @@ class qrscannerController extends Controller
     {
         return view('qrscanner');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+   
+    public function attendance(Request $request)
     {
-        //
+
+        if (User::where('employee_id', $request->attendance )->exists()) {
+       
+        $present = New qrscanner();
+
+        $date = Carbon::now();
+
+        $present->employee_id = $request->attendance;
+        $present->time_in = $date;
+        $present->time_out = $request->format("Y-m-d H:i:s");
+        $present->log_date = $request->format("Y-m-d H:i:s");
+        $present->status = $request->format("Y-m-d H:i:s");
+
+
+
+        $present->save();
+
+
+
+
+
+
+
+        
+        return view('qrscanner');
+        
+        }
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        
+        
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\qrscanner  $qrscanner
-     * @return \Illuminate\Http\Response
-     */
-    public function show(qrscanner $qrscanner)
-    {
-        //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\qrscanner  $qrscanner
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(qrscanner $qrscanner)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\qrscanner  $qrscanner
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, qrscanner $qrscanner)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\qrscanner  $qrscanner
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(qrscanner $qrscanner)
-    {
-        //
-    }
-}

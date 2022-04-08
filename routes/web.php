@@ -79,5 +79,5 @@ Route::get('/dtrtime', [dtrtimeController::class, 'index'])->name('dtrtime');
 
 Route::get('/qrscanner', [qrscannerController::class, 'index'])->name('qrscanner');
 
-
+Route::post('/attendancecheck', [qrscannerController::class, 'attendance'])->name('attendancecheck');
 

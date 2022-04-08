@@ -38,11 +38,15 @@
       <div class="relative flex flex-col min-w-0 break-words w-full mb-6 pb-3 shadow-lg rounded-lg bg-purple-100 border-0">
         <div class="rounded-t bg-white mb-0 px-6 py-6">
           <div class="text-center flex justify-between">
+
+          <form action= "{{ url('attendancecheck') }}" method = "POST">
+
+            @csrf
+
             <h6 class="text-black-700 text-xl font-bold">
               QR Code Scanner
             </h6>
             
-            <form>
             <button class="bg-purple-500 text-white active:bg-purple-600 hover:bg-purple-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
               <a href="{{ route('dtrlogs') }}" class="text-white">
               Cancel</a>
@@ -50,15 +54,17 @@
           </div>
         </div>
         
-        <button type="button" class="btn btn-secondary btn-lg" disabled>January 25, 2022 08:00am</button>
+        <button type="button" class="btn btn-secondary btn-lg" disabled>   </button>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center">
                     <video id="preview" width="50%"></video>
                 </div>
+               
+
                 <div class="col-md-6 align-self-center">
                     <label class>SCAN QR CODE</label>
-                    <input type="text" name="text" id="text" readonly placeholder="Scan QR Code" class="form-control">
+                    <input type="text" name="attendance" id="text" readonly placeholder="Scan QR Code" class="form-control">
                 </div>
             </div>
         </div>
@@ -81,6 +87,6 @@
                 document.forms[0].submit();
             });
          </script>
-
+        </form>
     </body>
 </html>
