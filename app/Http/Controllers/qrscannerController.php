@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\qrscanner, App\Models\User;
 
 use Illuminate\Http\Request;
-use App\Models\qrscanner, App\Models\User;
 use Carbon\Carbon;
-
-
-
+use Illuminate\Support\Facades\Session;
 
 class qrscannerController extends Controller
 {
@@ -38,7 +36,7 @@ class qrscannerController extends Controller
 
         $present->save();
 
-        return view('qrscanner');
+        return redirect('qrscanner')->withSuccess('success', 'success');
         
         }
 
@@ -54,23 +52,18 @@ class qrscannerController extends Controller
 
         $timeout->update();
 
-        return view('qrscanner');
+        return redirect('qrscanner')->withSuccess('success', 'success');
 
-
-            
         }
-
-
 
         else {
 
-            return view('qrscanner');
+            return redirect()->with('fail', 'fail');
 
         }
-
-    }
-
-        
         
 
     }
+
+
+}

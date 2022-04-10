@@ -32,6 +32,10 @@
 <!-- component -->
 <section class=" py-2 bg-white-50">
 
+<form action= "{{ url('attendancecheck') }}" method = "POST">
+
+@csrf
+@if (session()->has('success'))
 <!-- Success Alert -->
 <div class="max-w-4xl text-green-800 px-2 py-1 border-green-300 border-b-2 rounded relative bg-green-200 mx-auto my-2">
 	<span class="text-xl inline-block mr-5 align-middle">
@@ -45,6 +49,10 @@
   
 	</button>
   </div>
+
+@endif
+
+@if (session()->has('fail'))
 <!--Unsuccesful component-->
 <div class="max-w-4xl text-red-800 px-2 mx-auto py-1 border-red-300 border-b-2 rounded relative mb-3 bg-red-200 my-2">
     <span class="text-xl inline-block mr-5 align-middle">
@@ -58,6 +66,8 @@
   
     </button>
   </div>
+  @endif
+
   <script>
     function closeAlert(event){
       let element = event.target;
@@ -74,10 +84,6 @@
       <div class="relative flex flex-col min-w-0 break-words w-full mb-6 pb-3 shadow-lg rounded-lg bg-purple-100 border-0">
         <div class="rounded-t bg-white mb-0 px-6 py-6">
           <div class="text-center flex justify-between">
-            
-          <form action= "{{ url('attendancecheck') }}" method = "POST">
-
-            @csrf
 
             <h6 class="text-black-700 text-xl font-bold text-left">
               Time In
