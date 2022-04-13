@@ -16,49 +16,54 @@ class qrscannerController extends Controller
      */
     public function index()
     {
+
         return view('qrscanner');
+
     }
    
     public function attendance(Request $request)
     {
 
-        if (User::where('employee_id', $request->attendance )->exists()) {
-       
-        $present = New qrscanner();
+        if (User::where('employee_id', $request->attendance )->exists()) {  
 
-        $date = Carbon::now();
-
-        $present->employee_id = $request->attendance;
-        $present->time_in = $date;
-        $present->time_out = $request->input('time_out', "no time-out data entry");
-        $present->log_date = $request->input('log_date', "no log date data entry");
-        $present->status = $request->input('status', 0);
-
-        $present->save();
-
-        return redirect('qrscanner')->withSuccess('success', 'success');
+            if (qrscanner::where('employee_id', $request->attendance )->exists())
         
-        }
+            {
 
-        if (qrscanner::where('employee_id', $request->attendance )->exists()) {
+            $date = Carbon::now();
 
-        $timeout = qrscanner::find('employee_id');
+            qrscanner::where('employee_id', '=', $request->attendance)
+            ->update(['time_out' => $date, 'log_date' => $date, 'status' => '1']);
 
-        $date = Carbon::now();
+            return redirect('qrscanner')->withSuccess('success', 'success');
 
-        $timeout->time_out = $date;
-        $timeout->log_date = $date;
-        $timeout->status = $request->input('status', 1);
-
-        $timeout->update();
-
-        return redirect('qrscanner')->withSuccess('success', 'success');
-
-        }
+            }
 
         else {
 
-            return redirect()->with('fail', 'fail');
+            $present = New qrscanner();
+
+            $date = Carbon::now();
+    
+            $present->employee_id = $request->attendance;
+            $present->time_in = $date;
+            $present->time_out = $request->input('time_out', "no time-out data entry");
+            $present->log_date = $request->input('log_date', "no log date data entry");
+            $present->status = $request->input('status', 0);
+    
+            $present->save();
+    
+            return redirect('qrscanner')->withSuccess('success', 'success');
+            
+            }
+
+
+        }
+
+
+        else {
+
+            return redirect('qrscanner')->with('fail', 'fail');
 
         }
         

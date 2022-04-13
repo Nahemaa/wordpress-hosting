@@ -32,7 +32,7 @@
 <!-- component -->
 <section class=" py-2 bg-white-50">
 
-<form action= "{{ url('attendancecheck') }}" method = "POST">
+<form action= "{{ url('attendancecheck') }}" method ="POST">
 
 @csrf
 @if (session()->has('success'))
@@ -106,7 +106,7 @@
 
                 <div class="col-md-6 text-center">
                     <label class>SCAN QR CODE</label>
-                    <input type="text" name="attendance" id="text" readonly placeholder="Scan QR Code" class="form-control">
+                    <input type="text" name="attendance" id="text" readonly placeholder="Scan QR Code" class="form-control" value="">
                 </div>
             </div>
         </div>
