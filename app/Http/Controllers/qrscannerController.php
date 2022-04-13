@@ -26,16 +26,25 @@ class qrscannerController extends Controller
 
         if (User::where('employee_id', $request->attendance )->exists()) {  
 
-            if (qrscanner::where('employee_id', $request->attendance )->exists())
-        
-            {
+            if (qrscanner::where('employee_id', $request->attendance )->exists())   {   
 
-            $date = Carbon::now();
+                if  (qrscanner::whereDate('log_date', Carbon::today())->exists()) {
 
-            qrscanner::where('employee_id', '=', $request->attendance)
-            ->update(['time_out' => $date, 'log_date' => $date, 'status' => '1']);
+                    return redirect('qrscanner')->with('fail', 'fail');
 
-            return redirect('qrscanner')->withSuccess('success', 'success');
+                }
+
+                else {
+
+                    $date = Carbon::now();
+    
+                    qrscanner::where('employee_id', '=', $request->attendance)
+                    ->update(['time_out' => $date, 'log_date' => $date, 'status' => '1']);
+    
+                    return redirect('qrscanner')->withSuccess('success', 'success');
+    
+                }
+
 
             }
 
