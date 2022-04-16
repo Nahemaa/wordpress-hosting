@@ -37,14 +37,14 @@ class qrscannerController extends Controller
 
                      }
 
-                     //attendance time-out
+                    //attendance time-out
                     if  (qrscanner::whereDate('log_date', Carbon::today())->doesntexist()) {
 
                     $date = Carbon::now();
-    
-                    qrscanner::where('employee_id', '=', $request->attendance)
+
+                    qrscanner::whereDate('time_in', Carbon::today())
                     ->update(['time_out' => $date, 'log_date' => $date, 'status' => '1']);
-    
+
                     return redirect('qrscanner')->withSuccess('success', 'success');
 
                     }
