@@ -42,7 +42,7 @@
 	</span>
 	<span class="inline-block align-top mr-5 ml-1">
 	  <b class="capitalize">Success!</b> 
-	  <br>Your time in was recorded!
+	  <br>You have take attendance for today successfully.
 	</span>
 	<button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-0 mr-3 outline-none focus:outline-none" onclick="closeAlert(event)">
 	  <span>×</span>
@@ -59,7 +59,7 @@
     </span>
     <span class="inline-block align-top mr-5 ml-1">
       <b class="capitalize">Time in unsucessful.</b> 
-      <br> Scan failed. Please try again.
+      <br> Something went wrong.
     </span>
     <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-0 mr-3 outline-none focus:outline-none" onclick="closeAlert(event)">
       <span>×</span>
