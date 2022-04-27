@@ -39,13 +39,13 @@
 						DTR Logs
 					  </span>
 				</li>
-        <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
+        {{-- <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
 					<img src="https://img.icons8.com/material-outlined/24/000000/leave.png"/>
 					<span class="font-semibold text-lg pt-2">
             <a href="{{ route('requests') }}" class="hover:text-gray-900">
 						Requests</a>
 					  </span>
-				</li>
+				</li> --}}
         
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600 ">
 					<img src="https://img.icons8.com/ios-glyphs/30/000000/gear.png"/>
@@ -107,10 +107,10 @@
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Name
 								</th>
-								<th
+								{{-- <th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Mode
-								</th>
+								</th> --}}
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Department
@@ -152,9 +152,9 @@
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<p class="text-gray-900 whitespace-no-wrap">Amel Macasindel</p>
 								</td>
-								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+								{{-- <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   <p class="text-gray-900 whitespace-no-wrap">Time In</p>
-				        </td>
+				        </td> --}}
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
               <p class="text-gray-900 whitespace-no-wrap">Human Resource</p>
 						</td>
@@ -173,7 +173,43 @@
 			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 				<p class="text-gray-900 whitespace-no-wrap">5:00pm</p>
 						</td>
+						
+						<!--bullshit-->
+						{{-- <tbody>
+							<tr>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+													ABCD123
+												</p>
+											</div>
+										</div>
+								</td>
+						
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">Amel Macasindel</p>
+								</td>
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <p class="text-gray-900 whitespace-no-wrap">Human Resource</p>
+						</td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <p class="text-gray-900 whitespace-no-wrap">Senior Level</p>
+						</td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <p class="text-gray-900 whitespace-no-wrap">Senior HR</p>
+						</td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <p class="text-gray-900 whitespace-no-wrap">March 12, 2022</p>
+						</td>
+			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+				<p class="text-gray-900 whitespace-no-wrap">8:00am</p>
+						</td>
+			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+				<p class="text-gray-900 whitespace-no-wrap">5:00pm</p>
+						</td> --}}
 
+						
 
 								
 					</table>

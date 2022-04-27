@@ -43,13 +43,13 @@
                     <a href="{{ route('dtrlogs') }}" class="hover:text-gray-900">
                     DTR Logs</a></span>
 				</li>
-                <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
+                {{-- <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12  hover:bg-purple-600">
 					<img src="https://img.icons8.com/material-outlined/24/000000/leave.png"/>
 					<span class="font-semibold text-lg pt-2">
                     <a href="{{ route('requests') }}" class="hover:text-gray-900">
 						Requests</a>
 					  </span>
-				</li>
+				</li> --}}
                 
                 
 				<li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150 rounded w-30 h-12 center hover:bg-purple-600">
