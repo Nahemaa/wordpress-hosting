@@ -93,6 +93,7 @@
 			</div>
 		</div>
 		<div>
+
 			<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
 				<div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
 					<table class="min-w-full leading-normal">
@@ -100,100 +101,178 @@
 							<tr>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Employee ID
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
 									Name
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Work Days
+									Department
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Basic
+									Level
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									HRA
+									Position
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Con
-								</th>
-								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Inc
-								</th>
-								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Gross
-								</th>
-								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									PF
-								</th>
-								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									ESI
-								</th>
-								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Deductions
-								</th>
-								<th
-									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Payable
+									Actions
 								</th>
 							</tr>
 						</thead>
+
 						<tbody>
 							<tr>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<div class="flex items-center">
 											<div class="ml-3">
 												<p class="text-gray-900 whitespace-no-wrap">
-													Luelle Gabales
+													W8pqfm3o5hG7apSg
 												</p>
 											</div>
 										</div>
 								</td>
 						
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-						<p class="text-gray-900 whitespace-no-wrap">30 Days</p>
+						<p class="text-gray-900 whitespace-no-wrap">Valdez, Nicole,</p>
 						</td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                  		<p class="text-gray-900 whitespace-no-wrap">???</p>
+                  		<p class="text-gray-900 whitespace-no-wrap">Human Resources</p>
 				        </td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-              			<p class="text-gray-900 whitespace-no-wrap">???</p>
+              			<p class="text-gray-900 whitespace-no-wrap">Entry Level</p>
 						</td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						<p class="text-gray-900 whitespace-no-wrap">HR Intern</p>
 						</td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						<p class="text-gray-900 whitespace-no-wrap">
+							<button class="bg-purple-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-purple-500">
+								<a href="{{ route('employee1') }}" class="hover:text-gray-900">
+									View</a>
+							  </button>
+						</p>
+						</td>
+
+						<tbody>
+							<tr>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+													NZpZSFM6kzNR5vd8
+												</p>
+											</div>
+										</div>
+								</td>
+						
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">Portillo, Francis</p>
 						</td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-						<p class="text-gray-900 whitespace-no-wrap">???</p>
+                  		<p class="text-gray-900 whitespace-no-wrap">IT</p>
+				        </td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              			<p class="text-gray-900 whitespace-no-wrap">Entry Level</p>
 						</td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						<p class="text-gray-900 whitespace-no-wrap">IT Intern</p>
 						</td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-						<p class="text-gray-900 whitespace-no-wrap">???</p>
+						<p class="text-gray-900 whitespace-no-wrap">
+							<button class="bg-purple-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-purple-500">
+								<a href="{{ route('employee1') }}" class="hover:text-gray-900">
+									View</a>
+							  </button>
+						</p>
+						</td>
+
+						
+						<tbody>
+							<tr>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+													AJ3ORv5fC6snsGwU
+												</p>
+											</div>
+										</div>
+								</td>
+						
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">Macasindel, Amel,</p>
 						</td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-						<p class="text-gray-900 whitespace-no-wrap">???</p>
+                  		<p class="text-gray-900 whitespace-no-wrap">IT</p>
+				        </td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              			<p class="text-gray-900 whitespace-no-wrap">Entry Level</p>
 						</td>
 
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-						<p class="text-gray-900 whitespace-no-wrap">$22,000</p>
+						<p class="text-gray-900 whitespace-no-wrap">IT Intern</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">
+							<button class="bg-purple-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-purple-500">
+								<a href="{{ route('employee1') }}" class="hover:text-gray-900">
+									View</a>
+							  </button>
+						</p>
+						</td>
+
+						<tbody>
+							<tr>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<div class="flex items-center">
+											<div class="ml-3">
+												<p class="text-gray-900 whitespace-no-wrap">
+													FCTO1Kjys0dwUSQO
+												</p>
+											</div>
+										</div>
+								</td>
+						
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">HR,Executive,</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  		<p class="text-gray-900 whitespace-no-wrap">Human Resources</p>
+				        </td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              			<p class="text-gray-900 whitespace-no-wrap">Senior Level</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">HR Executive</p>
+						</td>
+
+						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+						<p class="text-gray-900 whitespace-no-wrap">
+							<button class="bg-purple-400 px-3 py-2 text-sm shadow-sm font-medium tracking-wider border text-black rounded-full hover:shadow-lg hover:bg-purple-500">
+								<a href="{{ route('employee1') }}" class="hover:text-gray-900">
+									View</a>
+							  </button>
+						</p>
 						</td>
 
 								
@@ -208,12 +287,12 @@
                                 Prev
                             </button>
 							&nbsp; &nbsp; --}}
-							<button
+							{{-- <button
                                 class="text-sm text-purple-50 transition duration-150 hover:bg-purple-500 bg-purple-600 font-semibold py-2 px-4 rounded">
                                 <a href="{{ route('salary_manager') }}" class="text-white">
 								Add New Department
 								</a>
-                            </button>
+                            </button> --}}
 						</div>
 					</div>
 				</div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\changepasswordController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\dtrlogsController;
 use App\Http\Controllers\dtrtimeController;
+use App\Http\Controllers\employee1Controller;
 use App\Http\Controllers\employeesController;
 use App\Http\Controllers\messagesController;
 use App\Http\Controllers\payrollController;
@@ -83,4 +84,6 @@ Route::get('/qrscanner', [qrscannerController::class, 'index'])->name('qrscanner
 Route::post('/attendancecheck', [qrscannerController::class, 'attendance'])->name('attendancecheck');
 
 Route::get('/timeout', [timeoutController::class, 'index'])->name('timeout');
+
+Route::get('/employee1', [employee1Controller::class, 'index'])->name('employee1');
 
