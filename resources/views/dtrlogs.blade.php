@@ -143,29 +143,29 @@
 									<div class="flex items-center">
 											<div class="ml-3">
 												<p class="text-gray-900 whitespace-no-wrap">
-													ABCD123
+													ExRSCYcIh4XkOBV6
 												</p>
 											</div>
 										</div>
 								</td>
 						
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">Amel Macasindel</p>
+									<p class="text-gray-900 whitespace-no-wrap">Ryu Kiritani</p>
 								</td>
 								{{-- <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   <p class="text-gray-900 whitespace-no-wrap">Time In</p>
 				        </td> --}}
 						<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-              <p class="text-gray-900 whitespace-no-wrap">Human Resource</p>
+              <p class="text-gray-900 whitespace-no-wrap">HR Department</p>
 						</td>
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-              <p class="text-gray-900 whitespace-no-wrap">Senior Level</p>
+              <p class="text-gray-900 whitespace-no-wrap">Entry Level</p>
 						</td>
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-              <p class="text-gray-900 whitespace-no-wrap">Senior HR</p>
+              <p class="text-gray-900 whitespace-no-wrap">HR Intern</p>
 						</td>
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-              <p class="text-gray-900 whitespace-no-wrap">March 12, 2022</p>
+              <p class="text-gray-900 whitespace-no-wrap">April 29, 2022</p>
 						</td>
 			<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 				<p class="text-gray-900 whitespace-no-wrap">8:00am</p>
